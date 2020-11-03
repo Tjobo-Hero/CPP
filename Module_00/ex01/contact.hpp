@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:43:17 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/02 17:45:03 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 14:57:48 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,14 @@ private:
 	std::string getFavoriteAnimal() const;
 	std::string getFavoriteSport() const;
 	std::string getFavoriteTreeType() const;
-public:
-	Contact(
-	const std::string &firstName = "", 
-	const std::string &lastName = "", 
-	const std::string &emailAddress= "", 
-	const std::string &phoneNumber = "", 
-	const std::string &age = "", 
-	const std::string &favoriteAnimal = "", 
-	const std::string &favoriteSport = "", 
-	const std::string favoriteTreeType = "");
 	
 public:
 	void 		addContact();
 	std::string	readInput();
 	void		storeFirstName();
-	
+	void		printDetails(int index);
+	void		printAndEditString(std::string tmp);
+	void		printContact();
 };
 
 #endif
