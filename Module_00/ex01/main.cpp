@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 17:00:22 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 17:13:00 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	Contact::addFirstName(const std::string &firstName)
 void	Contact::addLastName(const std::string &lastName)
 {
 	var_LastName = lastName;
+}
+void	Contact::addNickname(const std::string &Nickname)
+{
+	var_Nickname = Nickname;
 }
 void	Contact::addEmailAddress(const std::string &emailAddress)
 {
@@ -55,6 +59,10 @@ std::string		Contact::getLastName() const
 {
 	return (var_LastName);
 }
+std::string		Contact::getNickname() const
+{
+	return (var_Nickname);
+}
 std::string		Contact::getEmailAddress() const
 {
 	return (var_EmailAddress);
@@ -86,6 +94,8 @@ void			Contact::addContact()
 	addFirstName(readInput());
 	std::cout << "Please Enter Last Name: ";
 	addLastName(readInput());
+	std::cout << "Please Enter Nickname: ";
+	addNickname(readInput());
 	std::cout << "Please EmailAddress: ";
 	addEmailAddress(readInput());
 	std::cout << "Please Enter Phonenumber: ";
@@ -104,6 +114,7 @@ void			Contact::printContact()
 {
 	std::cout << "First Name: " << getFirstName() << std::endl;
 	std::cout << "Last Name: " << getLastName() << std::endl;
+	std::cout << "Nickname: " << getNickname() << std::endl;
 	std::cout << "EmailAddress: " << getEmailAddress() << std::endl;
 	std::cout << "Phonenumber: " << getPhoneNumber() << std::endl;
 	std::cout << "Age: " << getAge() << std::endl;
@@ -138,7 +149,7 @@ void			Contact::printDetails(int index)
 	std::cout << "          " << index;
 	printAndEditString(getFirstName());
 	printAndEditString(getLastName());
-	printAndEditString(getEmailAddress());
+	printAndEditString(getNickname());
 	std::cout << "|";
 	std::cout << std::endl;
 }
@@ -149,10 +160,10 @@ void			printPhonebook(Contact contacts[8], int index)
 	std::string 	line;
 	int				check;
 	
-	std::cout << "     index|" << "first name|"<< " last name|" << "  emailaddress\n";
+	std::cout << "      index|" << "first name|"<< " last name|" << "  nickname|\n";
 	for (int j = 0; j < index; j++)
 	{
-		std::cout << "|**********|**********|**********|**********|\n";
+		std::cout << "***********|**********|**********|**********|\n";
 		contacts[j].printDetails(j);
 	}
 	std::cout << "Please tell the program which contact you would like to see by typing in its index: ";

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:43:17 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 14:57:48 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 17:07:24 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Contact
 private:
 	std::string var_FirstName;
 	std::string	var_LastName;
+	std::string var_Nickname;
 	std::string	var_EmailAddress;
 	std::string	var_PhoneNumber;
 	std::string var_Age;
@@ -32,6 +33,7 @@ private:
 private:
 	void addFirstName(const std::string &firstName);
 	void addLastName(const std::string &lastName);
+	void addNickname(const std::string &Nickname);
 	void addEmailAddress(const std::string &emailAddress);
 	void addPhoneNumber(const std:: string &phoneNumber);
 	void addAge(const std::string &age);
@@ -40,6 +42,7 @@ private:
 	void addFavoriteTreeType(const std::string &favoriteTreeType);
 	std::string getFirstName() const;
 	std::string getLastName() const;
+	std::string getNickname() const;
 	std::string getEmailAddress() const;
 	std::string getPhoneNumber() const;
 	std::string getAge() const;
