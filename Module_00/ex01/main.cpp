@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 15:09:58 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 15:19:00 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void Contact::addFavoriteTreeType(const std::string &favoriteTreeType)
 {
 	var_FavoriteTreeType = favoriteTreeType;
 }
+
 std::string		Contact::getFirstName() const
 {
 	return (var_FirstName);
@@ -79,13 +80,6 @@ std::string		Contact::getFavoriteTreeType() const
 	return (var_FavoriteTreeType);
 }
 
-std::string			Contact::readInput()
-{
-	std::string line;
-	
-	std::getline(std::cin, line);
-	return (line);
-}
 void			Contact::addContact()
 {
 	std::cout << "Please Enter First Name: ";
@@ -105,6 +99,7 @@ void			Contact::addContact()
 	std::cout << "Please Enter Favorite Tree Type: ";
 	addFavoriteTreeType(readInput());
 }
+
 void			Contact::printContact()
 {
 	std::cout << "First Name: " << getFirstName() << std::endl;
@@ -115,7 +110,15 @@ void			Contact::printContact()
 	std::cout << "Favorite Animal: " << getFavoriteAnimal() << std::endl;
 	std::cout << "Favorite Sport: " << getFavoriteSport() << std::endl;
 	std::cout << "Favorite Tree Type: " << getFavoriteTreeType() << std::endl;
-}		
+}
+
+std::string			Contact::readInput()
+{
+	std::string line;
+	
+	std::getline(std::cin, line);
+	return (line);
+}
 
 void			Contact::printAndEditString(std::string tmp)
 {
@@ -129,6 +132,7 @@ void			Contact::printAndEditString(std::string tmp)
 		std::cout << " ";
 	std::cout << tmp;
 }
+
 void			Contact::printDetails(int index)
 {
 	std::cout << "          " << index;
@@ -138,6 +142,7 @@ void			Contact::printDetails(int index)
 	std::cout << "|";
 	std::cout << std::endl;
 }
+
 void			printPhonebook(Contact contacts[8], int index)
 {
 	int 		index_input;
@@ -175,6 +180,7 @@ void			printPhonebook(Contact contacts[8], int index)
 			contacts[index_input].printContact();
 	}
 }
+
 std::string		changeCommand(std::string &command)
 {
 	std::cout << "Enter one of the following commands {add}, {search} or {exit}: ";
