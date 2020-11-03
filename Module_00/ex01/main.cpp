@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 17:13:00 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 21:28:37 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,12 +175,12 @@ void			printPhonebook(Contact contacts[8], int index)
 		{
 			check = 1;
 			std::cout << "Not a valid index, please choose an index indicated on the screen.\n" 
-			<< "By index we mean a decimal digit between 0 and 8\n" 
+			<< "By index we mean a decimal digit between 0 and 8.\n" 
 			<< "Please type {search}, and try again.\n";
 			break ;
 		}
 	}
-	if (line.length() > 2)
+	if (line.length() > 2 && check == 0)
 	{
 		std::cout << "Unfortunately [" << line << "] is not a valid index\n";
 		check = 1;
