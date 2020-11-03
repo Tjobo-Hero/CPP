@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 15:19:00 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 17:00:22 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,9 +145,9 @@ void			Contact::printDetails(int index)
 
 void			printPhonebook(Contact contacts[8], int index)
 {
-	int 		index_input;
-	std::string line;
-	int			check;
+	int				index_input;
+	std::string 	line;
+	int				check;
 	
 	std::cout << "     index|" << "first name|"<< " last name|" << "  emailaddress\n";
 	for (int j = 0; j < index; j++)
@@ -168,6 +168,11 @@ void			printPhonebook(Contact contacts[8], int index)
 			<< "Please type {search}, and try again.\n";
 			break ;
 		}
+	}
+	if (line.length() > 2)
+	{
+		std::cout << "Unfortunately [" << line << "] is not a valid index\n";
+		check = 1;
 	}
 	if (check == 0)
 	{
