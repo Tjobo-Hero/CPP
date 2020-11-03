@@ -6,14 +6,13 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 15:03:27 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/03 15:09:58 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 #include <iostream>
 #include <string>
-#include <sstream>
 
 void	Contact::addFirstName(const std::string &firstName)
 {
@@ -205,5 +204,8 @@ int				main (void)
 			std::cout << "No contacts in phonebook please add a contact by typing 'ADD' or 'add'.\n";
 		else if (command == "search")
 			printPhonebook(contacts, index);
+		else
+			std::cout << "Please type a valid command {add}, {search} or {exit}\n";
+		
 	}
 }
