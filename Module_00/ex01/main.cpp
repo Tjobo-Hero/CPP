@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/30 13:56:08 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/30 16:58:09 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,7 @@ void			printPhonebook(Contact contacts[8], int index)
 	}
 	if (check == 0)
 	{
-		index_input = std::stoi(line);
+		index_input = std::atoi(line.c_str());
 		if (index_input < 1 || index_input > 8)
 			std::cout << "Unfortunately [" << index_input << "] is not a valid index\n";
 		else if (index_input >= index)
