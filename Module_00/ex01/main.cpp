@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:51:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/30 13:46:37 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/30 13:56:08 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void			Contact::addContact()
 	addLogin(readInput());
 	std::cout << "Please Enter Postal Address: ";
 	addPostalAddress(readInput());
-	std::cout << "Please Email Address: ";
+	std::cout << "Please Enter Email Address: ";
 	addEmailAddress(readInput());
 	std::cout << "Please Enter Phone Number: ";
 	addPhoneNumber(readInput());
