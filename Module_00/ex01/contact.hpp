@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:43:17 by timvancitte   #+#    #+#                 */
-/*   Updated: 2020/11/03 17:07:24 by timvancitte   ########   odam.nl         */
+/*   Updated: 2020/11/30 13:33:36 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,47 @@ private:
 	std::string var_FirstName;
 	std::string	var_LastName;
 	std::string var_Nickname;
-	std::string	var_EmailAddress;
-	std::string	var_PhoneNumber;
-	std::string var_Age;
-	std::string var_FavoriteAnimal;
-	std::string var_FavoriteSport;
-	std::string	var_FavoriteTreeType;
+	std::string	var_Login;
+	std::string	var_PostalAddress;
+	std::string var_EmailAddress;
+	std::string var_PhoneNumber;
+	std::string var_BirthdayDate;
+	std::string	var_FavoriteMeal;
+	std::string	var_UnderwearColor;
+	std::string	var_DarkestSecret;
 
 private:
 	void addFirstName(const std::string &firstName);
 	void addLastName(const std::string &lastName);
-	void addNickname(const std::string &Nickname);
-	void addEmailAddress(const std::string &emailAddress);
-	void addPhoneNumber(const std:: string &phoneNumber);
-	void addAge(const std::string &age);
-	void addFavoriteAnimal(const std::string &favoriteAnimal);
-	void addFavoriteSport(const std::string &favoriteSport);
-	void addFavoriteTreeType(const std::string &favoriteTreeType);
+	void addNickname(const std::string &nickname);
+	void addLogin(const std::string &login);
+	void addPostalAddress(const std::string &postalAddress);
+	void addEmailAddress(const std::string &emailAddrress);
+	void addPhoneNumber(const std::string &phoneNumber);
+	void addBirthdayDate(const std::string &birthdayDate);
+	void addFavoriteMeal(const std::string &favoriteMeal);
+	void addUnderwearColor(const std::string &underwearColor);
+	void addDarkestSecret(const std::string &darkestSecret);
 	std::string getFirstName() const;
 	std::string getLastName() const;
 	std::string getNickname() const;
+	std::string getLogin() const;
+	std::string getPostalAddress() const;
 	std::string getEmailAddress() const;
 	std::string getPhoneNumber() const;
-	std::string getAge() const;
-	std::string getFavoriteAnimal() const;
-	std::string getFavoriteSport() const;
-	std::string getFavoriteTreeType() const;
+	std::string getBirthdayDate() const;
+	std::string getFavoriteMeal() const;
+	std::string getUnderwearColor() const;
+	std::string getDarkestSecret() const;
 	
 public:
 	void 		addContact();
 	std::string	readInput();
 	void		storeFirstName();
 	void		printDetails(int index);
-	void		printAndEditString(std::string tmp);
+	void		printAndEditString(std::string line);
 	void		printContact();
+	void		printHeader();
 };
 
 #endif
