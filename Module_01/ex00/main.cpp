@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 12:35:27 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 12:13:07 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/11 12:37:18 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ponyOnTheHeap(Pony *heap)
 	heap->initiateGender("Merrie");
 	heap->initiateAge(5);
 	heap->printEverything();
+	delete heap;
 }
 
 int		main(void)
@@ -43,5 +44,5 @@ int		main(void)
 	stack.printEverything();
 	std::cout << "*****HEAP******" << std::endl;
 	ponyOnTheHeap(heap);
-	delete heap;
+	return (0);
 }
