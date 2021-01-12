@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:47 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/12 14:51:45 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:56:11 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int		main(void)
 {
-	Zombie		zombie("Hellraiser", "Hybrid");
+	Zombie		robijn = Zombie("Hellraiser", "Hybrid");
 	ZombieEvent crawling;
 	ZombieEvent running;
 	ZombieEvent dead;
 	
 	std::cout << "----Zombie----" << std::endl;
-	zombie.announce();
+	robijn.announce();
 	
 	std::cout << "\n----Zombie Event----" << std::endl;
 	running.setZombieType("Running");
