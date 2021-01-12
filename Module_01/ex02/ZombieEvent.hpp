@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 15:02:27 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:44:15 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class ZombieEvent
 {
 private:
-	std::string type;
+	std::string _type;
 	
 public:
 	ZombieEvent();

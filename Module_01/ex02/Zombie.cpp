@@ -6,25 +6,23 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:42 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 15:04:48 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:45:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string _Name, std::string _Type)
+Zombie::Zombie(std::string Name, std::string Type) : _name(Name), _type(Type)
 {
-	name = _Name;
-	type = _Type;
-	return ;
+	return;
 }
 
 Zombie::~Zombie()
 {
-	return ;
+	return;
 }
 
-void	Zombie::announce()
+void	Zombie::announce() const
 {
-	std::cout << "<" << name << " (" << type << ")" << ">" << " Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "<" << _name << " (" << _type << ")" << ">" << " Braiiiiiiinnnssss..." << std::endl;
 }

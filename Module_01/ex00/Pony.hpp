@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 12:35:25 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 12:34:55 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:40:04 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@
 class Pony
 {
 private:
-	std::string 	name;
-	std::string		color;
-	std::string		gender;
-	int				age;
+	std::string 	_name;
+	std::string		_color;
+	std::string		_gender;
+	int				_age;
 
 public:
 	Pony();
 	~Pony();
 	void		ponyOnTheStack(Pony stack);
 	void		ponyOnTheHeap(Pony *heap);	
-	void		initiateName(std::string Name);
-	void		initiateColor(std::string Color);
-	void		initiateGender(std::string Gender);
-	void		initiateAge(int Age);
-	void		printEverything();
+	void		setName(std::string Name);
+	void		setColor(std::string Color);
+	void		setGender(std::string Gender);
+	void		setAge(int Age);
+	void		printEverything() const;
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:49 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 15:02:45 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:46:52 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ ZombieEvent::~ZombieEvent()
 
 void		ZombieEvent::setZombieType(std::string Type)
 {
-	type = Type;
+	_type = Type;
 }
 
 Zombie*		ZombieEvent::newZombie(std::string name)
 {
-	return (new Zombie(name, type));
+	return (new Zombie(name, _type));
 }
 
 Zombie*		ZombieEvent::randomChump()
@@ -41,5 +41,5 @@ Zombie*		ZombieEvent::randomChump()
 	std::string nameRandom[] = {"MeSoRandom", "RandomZombieMe", "TheRandomizer", "Randizimo", "RandomRandom", "Rando"};
 	randomIndex = rand() % 6;
 	name = nameRandom[randomIndex];
-	return (new Zombie(name, type));
+	return (new Zombie(name, _type));
 }

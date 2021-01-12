@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 12:35:23 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 12:08:10 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:40:56 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,30 @@ Pony::~Pony()
 	return ;
 }
 
-void	Pony::initiateName(std::string Name)
+void	Pony::setName(std::string Name)
 {
-	name = Name;
+	_name = Name;
 }
 
-void	Pony::initiateColor(std::string Color)
+void	Pony::setColor(std::string Color)
 {
-	color = Color;
+	_color = Color;
 }
 
-void	Pony::initiateGender(std::string Gender)
+void	Pony::setGender(std::string Gender)
 {
-	gender = Gender;
+	_gender = Gender;
 }
 
-void	Pony::initiateAge(int Age)
+void	Pony::setAge(int Age)
 {
-	age = Age;
+	_age = Age;
 }
 
-void	Pony::printEverything()
+void	Pony::printEverything() const
 {
-	std::cout << "NAME: [" << name << "]" << " Address: [" << &name << "]" <<std::endl;
-	std::cout << "COLOR: [" << color << "]" << " Address: [" << &color << "]" <<std::endl;
-	std::cout << "Gender: [" << gender << "]" << " Address: [" << &gender << "]" <<std::endl;
-	std::cout << "Age: [" << age << "]" << " Address: [" << &age << "]" <<std::endl;
+	std::cout << "NAME: [" << _name << "]" << " Address: [" << &_name << "]" <<std::endl;
+	std::cout << "COLOR: [" << _color << "]" << " Address: [" << &_color << "]" <<std::endl;
+	std::cout << "Gender: [" << _gender << "]" << " Address: [" << &_gender << "]" <<std::endl;
+	std::cout << "Age: [" << _age << "]" << " Address: [" << &_age << "]" <<std::endl;
 }

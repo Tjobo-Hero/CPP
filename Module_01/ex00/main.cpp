@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 12:35:27 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 12:37:18 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/12 14:39:08 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	ponyOnTheStack(Pony stack)
 {
-	stack.initiateName("MyLittleStackPony");
-	stack.initiateColor("Blue");
-	stack.initiateGender("Stallion");
-	stack.initiateAge(10);
+	stack.setName("MyLittleStackPony");
+	stack.setColor("Blue");
+	stack.setGender("Stallion");
+	stack.setAge(10);
 	stack.printEverything();
 }
 
 void	ponyOnTheHeap(Pony *heap)
 {
 	heap = new Pony();
-	heap->initiateName("MylittleHeapPony");
-	heap->initiateColor("Black");
-	heap->initiateGender("Merrie");
-	heap->initiateAge(5);
+	heap->setName("MylittleHeapPony");
+	heap->setColor("Black");
+	heap->setGender("Merrie");
+	heap->setAge(5);
 	heap->printEverything();
 	delete heap;
 }
