@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 15:09:11 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/11 15:20:12 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/13 11:32:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@
 class Zombie
 {
 private:
-	std::string name;
-	std::string type;
+
+	std::string _name;
+	std::string _type;
+	
 public:
+
+	Zombie(void);
 	Zombie(std::string, std::string);
 	~Zombie();
-	void	announce();
+	
+	void		announce(void);
+	void	changeType(void);
+	void	randomChump(void);
 };
 #endif
