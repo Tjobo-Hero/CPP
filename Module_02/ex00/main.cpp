@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/18 12:25:42 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/18 15:28:33 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/15 16:19:11 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/15 16:25:28 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,15 @@
 
 int		main(void)
 {
-	Fixed			a;
-	Fixed const		b(10);
-	Fixed const		c(42.42f);
-	Fixed const		d(b);
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-	a = Fixed(1234.4321f);
+	c = b;
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	
 	return(0);
 }
