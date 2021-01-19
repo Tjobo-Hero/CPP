@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/19 16:05:17 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 16:15:50 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ FragTrap::FragTrap(FragTrap const &src)
 
 FragTrap&		FragTrap::operator=(FragTrap const &other)
 {
+	std::cout << "Operator called." << std::endl;
+	
 	this->_hitPoints = other._hitPoints;
 	this->_maxHitPoints = other._maxHitPoints;
 	this->_energyPoints = other._energyPoints;
@@ -51,6 +53,7 @@ FragTrap&		FragTrap::operator=(FragTrap const &other)
 	this->_meleeAttackDamage = other._meleeAttackDamage;
 	this->_rangedAttackDamage = other._rangedAttackDamage;
 	this->_armorDamageReduction = other._armorDamageReduction;
+	std::cout << "[" << _name << "] transfered.\n" << std::endl;
 	return *this;
 }
 
