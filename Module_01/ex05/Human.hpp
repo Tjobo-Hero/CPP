@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 12:15:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 11:23:05 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 11:13:48 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ class Human
 {
 private:
 
-	Brain	_brain;
+	const Brain	_brain;
 
 public:
 
 	Human(void);
 	~Human(void);
 
-	std::string	identify(void) const;
-	Brain		getBrain(void) const;
+	const Brain*	identify(void) const;
+	const Brain&	getBrain(void) const;
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 12:14:58 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 11:27:15 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 12:30:26 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 Brain::Brain(void) 
 {
 	std::cout << "Constructor called" << std::endl;
-	
-	std::stringstream	addressStr;
-	
-	addressStr << this;
-	addressStr >> _brainAddress;
-	
+
 	_language	= "English";
 	_age 		= 10;
 	_size		= 100;
@@ -36,7 +31,7 @@ Brain::~Brain(void)
 	return;
 }
 
-std::string		Brain::identify(void) const
+const Brain*	Brain::identify(void) const
 {
-	return	this->_brainAddress;
+	return	this;
 }

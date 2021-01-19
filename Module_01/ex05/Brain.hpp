@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 12:15:03 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 11:23:09 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 12:30:52 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Brain
 private:
 	
 	std::string	_language;
-	std::string	_brainAddress;
 	int			_age;
 	int			_size;
 	int			_memory;
@@ -33,6 +32,6 @@ public:
 	Brain(void);
 	~Brain(void);
 	
-	std::string		identify(void) const;
+	const Brain*	identify(void) const;
 };
 #endif

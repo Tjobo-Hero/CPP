@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 12:15:05 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 11:21:35 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 11:17:40 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ Human::~Human(void)
 	return;
 }
 
-Brain			Human::getBrain(void) const
+const Brain&			Human::getBrain(void) const
 {
 	return this->_brain;
 }
 
-std::string		Human::identify(void) const
+const Brain*		Human::identify(void) const
 {
 	return this->_brain.identify();
 }
