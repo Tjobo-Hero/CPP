@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/19 16:15:50 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 16:18:21 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 
 void				FragTrap::ancientMonkeyBouncingAttack(std::string const &target)
 {
-	std::cout << "The Jungle Demon Wakili hears your call. He attacks [" << target << "] with his coconut bazooka and does [55[ damage." << std::endl;
+	std::cout << "The Jungle Demon Wakili hears your call. He attacks [" << target << "] with his coconut bazooka and does [55] damage." << std::endl;
 	return;
 }
 
