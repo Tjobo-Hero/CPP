@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:44:32 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 14:31:04 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/18 11:12:22 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int argc, char **argv)
 		
 		return (-1);
 	}
-	if (!argv[2] || !argv[3])
+	if (!argv[2] || !argv[3] || !argv[2][0] || !argv[3][0])
 	{
 		std::cout << "Error: One the input strings is empty." << std::endl;
 		std::cout << "This program takes the following arguments [1. Filename] ; [2. String1] ; [3. String2]" << std::endl;

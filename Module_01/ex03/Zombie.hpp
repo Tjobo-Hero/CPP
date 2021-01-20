@@ -6,15 +6,16 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 15:09:11 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/13 11:32:16 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/18 10:17:58 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
 
 class Zombie
 {

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 15:09:05 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/13 11:46:43 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/18 14:39:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main (void)
 {
 	srand ( time(NULL) );
-	ZombieHorde zombieTeam = ZombieHorde(6);
+	ZombieHorde zombieTeam = ZombieHorde(10);
 	
 	zombieTeam.announce();
 	return(0);

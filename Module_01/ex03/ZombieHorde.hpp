@@ -6,12 +6,12 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 15:09:18 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/13 11:04:03 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/13 12:17:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEHORDE_HPP_
-# define _ZOMBIEHORDE_HPP_
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
 #include "Zombie.hpp"
 #include <iostream>

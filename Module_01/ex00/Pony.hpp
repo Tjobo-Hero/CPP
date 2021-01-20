@@ -6,17 +6,16 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 12:35:25 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/12 14:40:04 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/18 10:28:59 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _PONY_HPP_
-# define _PONY_HPP_
+#ifndef PONY_HPP
+# define PONY_HPP
 
 #include <string>
 #include <iostream>
 #include <sstream>
-#include <new>
 
 class Pony
 {

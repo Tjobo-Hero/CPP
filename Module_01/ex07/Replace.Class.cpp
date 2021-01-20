@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:15:50 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 16:23:05 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/18 11:15:20 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		Replace::setReplace(std::string File, std::string S1, std::string S2)
 	_filename = File;
 	_newFilename = _filename + ".replace";
 	_find = S1;
+	std::cout << "FIND: [" << _find << "]" << std::endl;
 	_replace = S2;	
 	std::cout << "The following data has been succesfully received:";
 	std::cout << " [" << _filename << "]" << " [" << _find << "]" << " [" << _replace << "]" << std::endl;

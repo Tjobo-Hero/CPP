@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:06:17 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/14 14:21:21 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/20 10:40:07 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ public:
 	void	magicReplace(void);
 
 };
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 15:09:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/13 11:36:10 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/13 11:51:21 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::Zombie(std::string Name, std::string Type) : _name(Name), _type(Type)
 
 Zombie::~Zombie()
 {
-	return ;
+	return;
 }
 
 void	Zombie::announce()

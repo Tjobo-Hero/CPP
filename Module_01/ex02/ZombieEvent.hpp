@@ -6,12 +6,12 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/12 14:44:15 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/20 10:38:53 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIEEVENT_HPP_
-# define _ZOMBIEEVENT_HPP_
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
 #include <string>
 #include <iostream>
@@ -20,9 +20,11 @@
 class ZombieEvent
 {
 private:
+
 	std::string _type;
 	
 public:
+
 	ZombieEvent();
 	~ZombieEvent();
 	void	setZombieType(std::string Type);

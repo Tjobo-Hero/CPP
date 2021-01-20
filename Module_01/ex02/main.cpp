@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 12:56:47 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/12 14:56:11 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/19 11:11:26 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int		main(void)
 {
+	srand ( time(NULL) );
+	
 	Zombie		robijn = Zombie("Hellraiser", "Hybrid");
 	ZombieEvent crawling;
 	ZombieEvent running;
@@ -37,7 +39,6 @@ int		main(void)
 	std::cout << "\n----Random Zombie----" << std::endl;	
 
 	Zombie* Random = dead.randomChump();
-	Random->announce();
 	delete Grimmer;
 	delete Horror;
 	delete McBrains;

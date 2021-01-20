@@ -6,7 +6,7 @@
 #    By: timvancitters <timvancitters@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/14 12:42:41 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/01/14 13:19:59 by timvancitte   ########   odam.nl          #
+#    Updated: 2021/01/15 13:07:56 by timvancitte   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,9 @@ $(NAME):
 	@echo $(GR)Compiled $(NAME) Succesfully$(NO)
 	
 clean:
+	
+fclean: 
 	@rm -f $(NAME)
 	@echo $(RD)Removed Executablen: $(NAME)$(NO)
-	
-fclean: clean
 
 re: fclean all
