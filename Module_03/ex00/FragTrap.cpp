@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/19 16:18:21 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/20 10:50:15 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ FragTrap::~FragTrap(void)
 
 FragTrap::FragTrap(FragTrap const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called." << std::endl;
 	*this = src;
 	std::cout << "FR4G-TP [" << this->_name << "] has been copied. Good luck with your clone.\n" << std::endl;
 	return;
@@ -100,7 +100,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 		std::cout << "[" << _name << "] has DIED. OMG call your mama.\n" << std::endl;
 		return;
 	}
-	std::cout << "[" << _name << "] has taken damage: [" << amount << "] " << "hitpoints left [" << _hitPoints << "]\n" << std::endl;
+	std::cout << "[" << _name << "] has taken [" << amount << "] damage.\n[" << _name << "] has ["<< _hitPoints << "] Hit Points left.\n" << std::endl;
 	return;
 }
 
@@ -109,7 +109,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 	this->_hitPoints += amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;
-	std::cout << "[" << _name << "] has been repaired for: [" << amount << "] Hit Points left [" << _hitPoints << "]\n" << std::endl;
+	std::cout << "[" << _name << "] has been repaired for: [" << amount << "]. [" << _name << "] has [" << _hitPoints << "] Hit Points left.\n" << std::endl;
 	return;
 }
 
@@ -118,7 +118,7 @@ void	FragTrap::re_energize(unsigned int amount)
 	this->_energyPoints += amount;
 	if (this->_energyPoints > this->_maxEnergyPoints)
 		this->_energyPoints = this->_maxEnergyPoints;
-	std::cout << "[" << _name << "] has been re-energize for: [" << amount << "] Energy Points left [" << _energyPoints << "]\n" << std::endl;
+	std::cout << "[" << _name << "] has been re-energize for: [" << amount << "]. [" << _name << "] has [" << _energyPoints << "] Energy Points left.\n" << std::endl;
 	return;
 }
 
@@ -144,8 +144,6 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 	(this->*functions[randomNum])(target);
 	this->_energyPoints -= 25;
 	std::cout << "This special attack has cost 25 of Energy Points [" << _name << "] now has Energy Points: [" << _energyPoints << "] left.\n" << std::endl;
-	
-
 	return;
 }
 
@@ -175,7 +173,6 @@ void				FragTrap::monsoonMurdererCallsTornadoAttack(std::string const &target)
 
 void				FragTrap::summonDarknessAttack(std::string const &target)
 {
-	
 	std::cout << "You summon darkness of an ancient shining rock. [" << target << "] suffors while an evil spirit takes of the brian. The damage is a shocking 100!" << std::endl;
 	return;
 }
