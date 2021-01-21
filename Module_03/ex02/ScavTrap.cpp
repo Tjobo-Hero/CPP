@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 11:07:57 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:55:49 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/21 15:33:37 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ScavTrap::rangedAttack(std::string const &target)
 		std::cout << this->getName() << " has not enough Hit Points. Please get yourself repaired.\n" << std::endl;
 		return;
 	}
-	std::cout << this->getName() << " attacks [" << target << "] from far away. Reslting in [" << this->_rangedAttackDamage << "] points of damage! Oh Yeah!\n" << std::endl;
+	std::cout << this->getName() << " attacks [" << target << "] from far away. Resulting in [" << this->_rangedAttackDamage << "] points of damage! Oh Yeah!\n" << std::endl;
 	return;
 }
 
@@ -134,7 +134,7 @@ void				ScavTrap::longestHulaHoopOnATrampolineSomersaultingChallenge(std::string
 
 void				ScavTrap::chopstickAndGreasyBeanChallenge(std::string const &target)
 {
-	std::cout << "Chopsticks are ideal for eating most dishe. But [" << target << "] is confronted with the challenge to eat at least 40 greasy beans in one minute. If [" << target << "] fails the damage wille be [15]." << std::endl;
+	std::cout << "Chopsticks are ideal for eating most dishes. But [" << target << "] is confronted with the challenge to eat at least 40 greasy beans in one minute. If [" << target << "] fails the damage wille be [15]." << std::endl;
 	return;
 }
 
