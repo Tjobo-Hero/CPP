@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/25 17:00:52 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/26 12:46:15 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,23 @@ class Victim
 
 	private:
 
-		std::string		_name;
 		Victim(void);
+		
+	protected:
 			
+		std::string		_name;
+		
 	public:
 
-		Victim(std::string &Name);
+		Victim(std::string const &Name);
 		Victim(Victim const &src);
-		~Victim(void);
-		Victim&				operator=(Victim const &rhs);
+		virtual ~Victim(void);
+		Victim&				operator=(Victim const &obj);
 		std::string			getName(void) const;
 		void				introduce(void) const;
-		
+		void				getPolymorphed(void) const;
 };
+
+std::ostream&		operator<<(std::ostream &o, Victim const &victim);
 
 #endif

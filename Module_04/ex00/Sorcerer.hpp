@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:08 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/25 16:49:21 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/26 12:45:08 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -26,15 +27,16 @@ class Sorcerer
 
 	public:
 
-		Sorcerer(std::string &Name, std::string &Title);
+		Sorcerer(std::string const &Name, std::string const &Title);
 		Sorcerer(Sorcerer const &src);
 		~Sorcerer(void);
-		Sorcerer&			operator=(Sorcerer const &rhs);
+		Sorcerer&			operator=(Sorcerer const &obj);
 		std::string			getName(void) const;
 		std::string			getTitle(void) const;
 		void				introduce(void) const;
+		void				polymorph(Victim const &other) const;
 };
 
-std::ostream&		operator<<(std::ostream &o, Sorcerer const &i);
+std::ostream&		operator<<(std::ostream &o, Sorcerer const &sorcerer);
 
 #endif

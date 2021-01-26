@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.cpp                                           :+:    :+:            */
+/*   Prey.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/25 16:07:01 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 13:49:47 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/26 13:49:59 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/26 14:00:42 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Prey.hpp"
 #include "Victim.hpp"
 
-Peon::Peon(std::string const &Name) : Victim(Name)
+Prey::Prey(std::string const &Name) : Victim(Name)
 {
 	std::cout << "Zog Zog" << std::endl;
 	return;
 }
 
-
-Peon::Peon(Peon const &src) : Victim(src)
+Prey::Prey(Prey const &src) : Victim(src)
 {
-	std::cout << "Copy constructor Peon called." << std::endl;
+	std::cout << "Copy constructor Prey called." << std::endl;
 	*this = src;
 	return;
 }
 
-Peon::~Peon(void)
+Prey::~Prey(void)
 {
 	std::cout << "Bleuark..." << std::endl;
 	return;
 }
 
-Peon&		Peon::operator=(Peon const &obj)
+Prey&		Prey::operator=(Prey const &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	
@@ -41,7 +40,7 @@ Peon&		Peon::operator=(Peon const &obj)
 	return *this;
 }
 
-void			Peon::getPolymorphed(void) const
+void			Prey::getPolymorphed(void) const
 {
 	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
 	return;

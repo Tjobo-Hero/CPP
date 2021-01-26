@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   Prey.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/25 16:07:03 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 14:23:22 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/26 13:49:37 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/26 14:23:20 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+
+#ifndef PREY_HPP
+# define PREY_HPP
 
 #include "Victim.hpp"
 
-class Peon : public Victim
+class Prey : public Victim
 {
 	private:
 
-		Peon(void);
+		Prey(void);
 			
 	public:
 
-		Peon(std::string const &Name);
-		Peon(Peon const &src);
-		virtual ~Peon(void);
-		Peon&						operator=(Peon const &obj);
+		Prey(std::string const &Name);
+		Prey(Prey const &src);
+		virtual ~Prey(void);
+		Prey&						operator=(Prey const &obj);
 		virtual void				getPolymorphed(void) const;
 };
 
