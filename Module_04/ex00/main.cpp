@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:06:55 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 13:54:14 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/26 14:26:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int		main(void)
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 	robert.polymorph(tim);
+	tim.introduce();
+	joe.introduce();
 
 	return(0);
 }
