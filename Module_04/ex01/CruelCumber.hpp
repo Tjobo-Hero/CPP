@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.class.hpp                                    :+:    :+:            */
+/*   CruelCumber.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 10:10:36 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 13:16:07 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/27 13:36:29 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/27 13:55:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef CRUELCUMBER_HPP
+# define CRUELCUMBER_HPP
 
-#include <iostream>
+class CruelCumber : public Enemy
 
-class Fixed
 {
+	private:
 
-private: 
+		int 	_damageReduction = 6;
 	
-	int					_fixedPointValue;
-	static const int	_numberFractionalBits = 8;
-	
-public:
+	public:
 
-	Fixed(void);
-	Fixed(Fixed const &src);
-	~Fixed();
-	
-	Fixed&			operator=(Fixed const &rhs);
-	int				getRawBits(void) const;
-	void			setRawBits(int const raw);
-	
+		CruelCumber(void);
+		virtual ~CruelCumber(void);
+		CruelCumber(CruelCumber const &src);
+		CruelCumber&			operator=(CruelCumber const &obj);
+		std::string		getType(void) const ;
+		int				getHP(void) const;
+		virtual void	takeDamage(int);
 };
-
-std::ostream&		operator<<(std::ostream &o, Fixed const &i);
 
 #endif

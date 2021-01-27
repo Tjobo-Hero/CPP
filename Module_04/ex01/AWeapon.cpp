@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:44:53 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 15:40:40 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:35:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ AWeapon::AWeapon(AWeapon const &src)
 
 AWeapon			operator=(Aweapon const &obj)
 {
-	this->_name = obj._name;
-	this->_apcost = obj._apcost;
-	this->_damage = obj._damage;
+	if(this != &obj)
+	{
+		this->_name = obj._name;
+		this->_apcost = obj._apcost;
+		this->_damage = obj._damage;
+	}
 	return *this;
 }
 

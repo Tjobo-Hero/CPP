@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PowerFist.cpp                                      :+:    :+:            */
+/*   NoisyCricket.cpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/26 14:45:46 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 12:37:30 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/27 13:28:56 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/27 15:01:37 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
-#include "PowerFist.hpp"
+#include "NoisyCricket.hpp"
 
-PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50)
+NoisyCricket::NoisyCricket(void) : AWeapon("Noisy Cricket (from the Men in Black movie)", 12, 60)
 {
 	return;
 }
 
-PowerFist::~PowerFist(void)
+NoisyCricket::~NoisyCricket(void)
 {
 	return;
 }
 
-PowerFist::PowerFist(PowerFist const &src) : AWeapon(src)
+NoisyCricket::NoisyCricket(NoisyCricket const &src) : AWeapon(src)
 {
 	*this = src;
 	return;
 }
 
-PowerFist&		PowerFist::operator=(PowerFist const &obj)
+NoisyCricket&		NoisyCricket::operator=(NoisyCricket const &obj)
 {
 	if(this != &obj)
 	{
@@ -40,8 +40,8 @@ PowerFist&		PowerFist::operator=(PowerFist const &obj)
 	return *this;
 }
 
-void		PowerFist::attack(void) const
+void		NoisyCricket::attack(void) const
 {
-	std::cout << "* pschhh... SBAM! *" << std::endl;
+	std::cout << "* crickets chirp..... BOOOOOOOOOOM *" << std::endl;
 	return;
 }

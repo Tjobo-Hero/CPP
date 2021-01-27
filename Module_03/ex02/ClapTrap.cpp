@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/21 12:38:14 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:55:01 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:28:15 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,19 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 ClapTrap&		ClapTrap::operator=(ClapTrap const &other)
 {
 	std::cout << "Operator called." << std::endl;
-	
-	this->_hitPoints = other._hitPoints;
-	this->_maxHitPoints = other._maxHitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_maxEnergyPoints = other._maxEnergyPoints;
-	this->_level = other._level;
-	this->_name = other._name;
-	this->_meleeAttackDamage = other._meleeAttackDamage;
-	this->_rangedAttackDamage = other._rangedAttackDamage;
-	this->_armorDamageReduction = other._armorDamageReduction;
-	std::cout << "[" << _name << "] transfered.\n" << std::endl;
+	if(this != &other)
+	{
+		this->_hitPoints = other._hitPoints;
+		this->_maxHitPoints = other._maxHitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_maxEnergyPoints = other._maxEnergyPoints;
+		this->_level = other._level;
+		this->_name = other._name;
+		this->_meleeAttackDamage = other._meleeAttackDamage;
+		this->_rangedAttackDamage = other._rangedAttackDamage;
+		this->_armorDamageReduction = other._armorDamageReduction;
+		std::cout << "[" << _name << "] transfered.\n" << std::endl;
+	}
 	return *this;
 }
 	

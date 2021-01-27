@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   SuperMutant.cpp                                    :+:    :+:            */
+/*   CruelCumber.cpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/26 14:45:56 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 14:02:35 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/27 14:07:24 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/27 15:00:24 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
-#include "SuperMutant.hpp"
+#include "CruelCumber.hpp"
 
-SuperMutant::SuperMutant(void) : Enemy(170, "Super Mutant")
+CruelCumber::CruelCumber(void) : Enemy(170, "Super Mutant")
 {
-	std::cout << "Gaaah. Me want smash heads!" << std::endl;
+	std::cout << "Mwuahahahaha CruelCumber comming for you!" << std::endl;
 	return;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &src)
+CruelCumber::CruelCumber(CruelCumber const &src)
 {
 	*this = src;
 	return;
 }
 
-SuperMutant::~SuperMutant(void)
+CruelCumber::~CruelCumber(void)
 {
-	std::cout << "Aaargh..." << std::endl;
+	std::cout << "I'll be back, as ComeBackCumber." << std::endl;
 	return;
 }
 
-SuperMutant&		SuperMutant::operator=(SuperMutant const &obj)
+CruelCumber&		CruelCumber::operator=(CruelCumber const &obj)
 {
 	if(this != &obj)
 	{
@@ -41,17 +41,17 @@ SuperMutant&		SuperMutant::operator=(SuperMutant const &obj)
 	return *this;
 }
 
-std::string		SuperMutant::getType(void) const
+std::string		CruelCumber::getType(void) const
 {
 	return this->_type;
 }
 
-int				SuperMutant::getHP(void) const
+int				CruelCumber::getHP(void) const
 {
 	return this->_hp;
 }
 
-void			SuperMutant::takeDamage(int damage)
+void			CruelCumber::takeDamage(int damage)
 {
 	damage -= this->_damageReduction;
 	if (damage < 0)

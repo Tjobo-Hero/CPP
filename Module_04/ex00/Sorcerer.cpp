@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:05 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 12:45:28 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:34:22 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ Sorcerer::~Sorcerer(void)
 Sorcerer&		Sorcerer::operator=(Sorcerer const &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	
-	this->_name = obj._name;
-	this->_title = obj._title;
+	if(this != &obj)
+	{
+		this->_name = obj._name;
+		this->_title = obj._title;	
+	}
 	return *this;
 }
 

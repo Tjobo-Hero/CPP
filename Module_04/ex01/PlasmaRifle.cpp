@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:40 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 15:42:37 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:37:09 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ PlasmaRifle::~PlasmaRifle(void)
 
 PlasmaRifle::PlasmaRifle(PlasmaRifle const &src) : AWeapon(src)
 {
+	*this = src;
 	return;
 }
 
 PlasmaRifle&		PlasmaRifle::operator=(PlasmaRifle const &obj)
 {
-	this->_name = obj._name;
-	this->_apcost = obj._apcost;
-	this->_damage = obj._damage;
+	if(this != &obj)
+	{
+		this->_name = obj._name;
+		this->_apcost = obj._apcost;
+		this->_damage = obj._damage;
+	}
 	return *this;
 }
 

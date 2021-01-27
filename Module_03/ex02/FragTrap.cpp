@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:55:56 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:31:42 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ FragTrap::FragTrap(std::string Name)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << this->getName() << "] died. Don't cry.\n" << std::endl;
+	std::cout << this->getName() << " died. Don't cry.\n" << std::endl;
 	return;
 }
 
@@ -60,17 +60,19 @@ FragTrap::FragTrap(FragTrap const &src)
 FragTrap&		FragTrap::operator=(FragTrap const &other)
 {
 	std::cout << "Operator called." << std::endl;
-	
-	this->_hitPoints = other._hitPoints;
-	this->_maxHitPoints = other._maxHitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_maxEnergyPoints = other._maxEnergyPoints;
-	this->_level = other._level;
-	this->_name = other._name;
-	this->_meleeAttackDamage = other._meleeAttackDamage;
-	this->_rangedAttackDamage = other._rangedAttackDamage;
-	this->_armorDamageReduction = other._armorDamageReduction;
-	std::cout << this->_name << " transfered.\n" << std::endl;
+	if(this != &other)
+	{
+		this->_hitPoints = other._hitPoints;
+		this->_maxHitPoints = other._maxHitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_maxEnergyPoints = other._maxEnergyPoints;
+		this->_level = other._level;
+		this->_name = other._name;
+		this->_meleeAttackDamage = other._meleeAttackDamage;
+		this->_rangedAttackDamage = other._rangedAttackDamage;
+		this->_armorDamageReduction = other._armorDamageReduction;
+		std::cout << this->_name << " transfered.\n" << std::endl;
+	}
 	return *this;
 }
 

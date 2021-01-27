@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.class.hpp                                    :+:    :+:            */
+/*   NoisyCricket.hpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 10:10:36 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 13:16:07 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/01/27 13:28:59 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/01/27 13:33:28 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef NOISYCRICKET_HPP
+# define NOISYCRICKET_HPP
 
-#include <iostream>
+#include "AWeapon.hpp"
 
-class Fixed
+class NoisyCricket : public AWeapon
 {
+	public:
 
-private: 
-	
-	int					_fixedPointValue;
-	static const int	_numberFractionalBits = 8;
-	
-public:
-
-	Fixed(void);
-	Fixed(Fixed const &src);
-	~Fixed();
-	
-	Fixed&			operator=(Fixed const &rhs);
-	int				getRawBits(void) const;
-	void			setRawBits(int const raw);
-	
+		NoisyCricket(void);
+		virtual ~NoisyCricket(void);
+		NoisyCricket(NoisyCricket const &src);
+		NoisyCricket&		operator=(NoisyCricket const &obj);
+		virtual void		attack(void) const;
 };
-
-std::ostream&		operator<<(std::ostream &o, Fixed const &i);
-
 #endif

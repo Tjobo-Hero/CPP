@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:01 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 13:49:47 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:33:44 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ Peon::~Peon(void)
 Peon&		Peon::operator=(Peon const &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	
-	this->_name = obj._name;
+	if(this != &obj)
+		this->_name = obj._name;
 	return *this;
 }
 

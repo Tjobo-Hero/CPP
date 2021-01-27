@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:11 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 14:23:44 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/27 12:34:44 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ Victim::~Victim(void)
 Victim&		Victim::operator=(Victim const &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	
-	this->_name = obj._name;
+	if(this != &obj)
+		this->_name = obj._name;
 	return *this;
 }
 
