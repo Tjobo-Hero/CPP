@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 12:06:58 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:33:52 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ void	FragTrap::meleeAttack(std::string const &target)
 	
 void	FragTrap::takeDamage(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number." << std::endl;
+		return;
+	}
 	if (_hitPoints == 0)
 	{
 		std::cout << "FR4G-TP [" << _name << "] is not alive so nothing has been done.\n" << std::endl;
@@ -106,6 +111,11 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
 	this->_hitPoints += amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;

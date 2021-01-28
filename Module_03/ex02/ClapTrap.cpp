@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/21 12:38:14 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 12:28:15 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:41:38 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ ClapTrap&		ClapTrap::operator=(ClapTrap const &other)
 	
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number." << std::endl;
+		return;
+	}
 	if (_hitPoints == 0)
 	{
 		std::cout << _name << " is not alive so nothing has been done.\n" << std::endl;
@@ -86,6 +91,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number." << std::endl;
+		return;
+	}
 	this->_hitPoints += amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;

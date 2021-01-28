@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 11:07:57 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 12:21:17 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:41:29 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ void	ScavTrap::meleeAttack(std::string const &target)
 	
 void	ScavTrap::takeDamage(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number." << std::endl;
+		return;
+	}
 	if (_hitPoints == 0)
 	{
 		std::cout << "SC4V-TP [" << _name << "] has not enough Hit Points. Please get yourself repaired.\n" << std::endl;
@@ -106,6 +111,11 @@ void	ScavTrap::takeDamage(unsigned int amount)
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number." << std::endl;
+		return;
+	}
 	this->_hitPoints += amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:18 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 12:15:27 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:37:03 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int			main(void)
 
 	std::cout << "\n>>>>>>>FR4G-TP<<<<<<<\n" << std::endl;
     
+	f1.beRepaired(-1);
+	f1.takeDamage(-1);
     f1.vaulthunter_dot_exe("Bartel-Jaap");
     f2.vaulthunter_dot_exe("DJ Jean");
     f3.vaulthunter_dot_exe("Mia Wallace");
