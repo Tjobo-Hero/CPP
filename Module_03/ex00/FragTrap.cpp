@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 17:38:17 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:38:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ FragTrap&		FragTrap::operator=(FragTrap const &other)
 
 void	FragTrap::rangedAttack(std::string const &target)
 {
-	if (this->_hitPoints == 0)
+	if(this->_hitPoints == 0)
 	{
 		std::cout << "[" << _name << "] is not alive so nothing has been done.\n" << std::endl;
 		return;
@@ -70,7 +70,7 @@ void	FragTrap::rangedAttack(std::string const &target)
 
 void	FragTrap::meleeAttack(std::string const &target)
 {
-	if (this->_hitPoints == 0)
+	if(this->_hitPoints == 0)
 	{
 		std::cout << "[" << _name << "] is not alive so nothing has been done.\n" << std::endl;
 		return;
@@ -81,13 +81,19 @@ void	FragTrap::meleeAttack(std::string const &target)
 	
 void	FragTrap::takeDamage(unsigned int amount)
 {
-	if (_hitPoints == 0)
+	std::cout << "AMOUNT TAKE DAMAGE: " << amount << std::endl;
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
+	if(_hitPoints == 0)
 	{
 		std::cout << "[" << _name << "] is not alive so nothing has been done.\n" << std::endl;
 		return;
 	}
 	std::cout << "[" << _name << "] is being attacked at this very moment." << std::endl;
-	if (amount <= _armorDamageReduction)
+	if(amount <= _armorDamageReduction)
 	{
 		std::cout << "[" << _name << "] deflected the attack. Better luck next time.\n" << std::endl;
 		return;
@@ -106,6 +112,12 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
+	std::cout << "AMOUNT BE REPAIRED: " << amount << std::endl;
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
 	this->_hitPoints += amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;
