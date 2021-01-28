@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:44:55 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 15:40:10 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:00:07 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class AWeapon
 	protected:
 	
 		std::string _name;
-		int			_damage;
 		int			_apcost;
+		int			_damage;
 		
 	public:
 

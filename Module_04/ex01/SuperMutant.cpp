@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:56 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 14:02:35 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:45:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ SuperMutant::SuperMutant(void) : Enemy(170, "Super Mutant")
 	return;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &src)
+SuperMutant::SuperMutant(SuperMutant const &src) : Enemy(src)
 {
-	*this = src;
 	return;
 }
 
@@ -53,11 +52,9 @@ int				SuperMutant::getHP(void) const
 
 void			SuperMutant::takeDamage(int damage)
 {
-	damage -= this->_damageReduction;
+	damage -= 3;
 	if (damage < 0)
 		return;
 	this->_hp -= damage;
-	if (this->_hp < 0)
-		this->_hp = 0;
 	return;
 }

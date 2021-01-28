@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:02 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 14:02:07 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:45:15 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,10 @@ int				Enemy::getHP(void) const
 	return this->_hp;
 }
 
-void			Enemy::takeDamage(int)
+void			Enemy::takeDamage(int damage)
 {
 	if (damage < 0)
 		return;
 	this->_hp -= damage;
-	if (this->_hp < 0)
-		this->_hp = 0;
 	return;
 }

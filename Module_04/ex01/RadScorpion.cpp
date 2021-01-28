@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:51 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 14:04:23 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:45:50 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ RadScorpion::RadScorpion(void) : Enemy(80, "RadScorpion")
 	return;
 }
 
-RadScorpion::RadScorpion(RadScorpion const &src)
+RadScorpion::RadScorpion(RadScorpion const &src) : Enemy(src)
 {
-	*this = src;
 	return;
 }
 
@@ -55,8 +54,6 @@ void			RadScorpion::takeDamage(int damage)
 {
 	if (damage < 0)
 		return;
-	if((this->_hp -= damage) <= 0);
-	else
-		this->_hp = 0;
+	this->_hp -= damage;
 	return;
 }

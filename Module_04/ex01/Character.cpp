@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:44:58 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 15:45:00 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:58:03 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Character::Character(std::string const &name) : _name(name), _actionPoints(40)
 {
-	std::cout << "Character: " << this->name << ", was created. Get ready to rumble!" << std::endl;
+	std::cout << "Character: " << this->_name << ", was created. Get ready to rumble!" << std::endl;
 	return;
 }
 
@@ -28,11 +28,11 @@ Character::Character(Character const &src)
 
 Character::~Character(void)
 {
-	std::cout << "Character: " << this->_name << "so long cruel world." << std::endl;
+	std::cout << "Character: " << this->_name << " so long cruel world." << std::endl;
 	return;
 }
 
-Character&			operator=(Character const &obj)
+Character&			Character::operator=(Character const &obj)
 {
 	if (this != &obj)
 	{
@@ -45,7 +45,7 @@ Character&			operator=(Character const &obj)
 
 void				Character::recoverAP(void)
 {
-	this->_actionPoints += this->_recoverAP;
+	this->_actionPoints += 10;
 	if (this->_actionPoints > 40)
 		this->_actionPoints = 40;
 	std::cout << "AP has been recoverd, total AP is: " << this->_actionPoints << "." << std::endl;
@@ -54,22 +54,54 @@ void				Character::recoverAP(void)
 
 void				Character::attack(Enemy *enemy)
 {
-	if(this->_actionPoints == 0)
+	if(!enemy)
 	{
-		std::cout << this->_name << " doesn't have enough Action Points to carry out the attack." << std::endl;
-		std::cout << "Current Action Points: " << this->_actionPoints << std::endl;
+		std::cout << "The character can't fight NULL. Please provide the character wit a valid Enemy." << std::endl;
+		return;
 	}
-	if(this->_actionPoints -= this->_weaponPtr.getAPCost() < 0);
+	else if(!this->_weaponPtr)
+	{
+		std::cout << this->_name << " is unarmed, please equip it wit a weapon." << std::endl;
+		return;
+	}
+	else if(this->_actionPoints == 0)
 	{
 		std::cout << this->_name << " doesn't have enough Action Points to carry out the attack." << std::endl;
 		std::cout << "Current Action Points: " << this->_actionPoints << std::endl;
-		std::cout << "Minimum Action Poins need the attack of the weapon: " << this->_weaponPtr.getAPCost() << std::endl;
+		return;
+	}
+	else if(this->_actionPoints < this->_weaponPtr->getAPCost())
+	{
+		std::cout << this->_name << " doesn't have enough Action Points to carry out the attack." << std::endl;
+		std::cout << "Current Action Points: " << this->_actionPoints << std::endl;
+		std::cout << "Minimum Action Poins needed to attack with this weapon: " << this->_weaponPtr->getAPCost() << std::endl;
+		std::cout << "Please change weapon or use the funtion recoverAP." << std::endl;
+		return;
+	}
+	else
+	{
+		std::cout << this->_name << " attacks " << enemy->getType() << " wit a " << this->_weaponPtr->getName() << std::endl;
+		this->_actionPoints -= this->_weaponPtr->getAPCost();
+		this->_weaponPtr->attack();
+		enemy->takeDamage(this->_weaponPtr->getDamage());
+		if(enemy->getHP() <= 0)
+		{
+			std::cout << this->_name << " killed the following enemy: " << enemy->getType() << std::endl;
+			delete enemy;
+			return;
+		}
+		std::cout << enemy->getType() << "has HP left: " << enemy->getHP() << std::endl;
 		return;
 	}
 }
 
 void				Character::equip(AWeapon *weapon)
 {
+	if(!weapon)
+	{
+		std::cout << "Please equip the character with a weapon and not with NULL." << std::endl;
+		return;
+	}
 	this->_weaponPtr = weapon;
 	return;
 }
@@ -92,8 +124,8 @@ AWeapon*			Character::getWeapon(void) const
 std::ostream&		operator<<(std::ostream &o, Character const &character)
 {
 	if(!character.getWeapon())
-		o << character.getName() << " has " << character.getActionPoints() << " but doesn't wield a weapon." << std::endl;
+		o << character.getName() << " has " << character.getActionPoints() << " AP, but doesn't wield a weapon. Please equip " << character.getName() << " with a weapon." << std::endl;
 	else
-		o << character.getName() << " has " << character.getActionPoints() << " and wields a " << character.getWeapon()->getName() << std::endl;
+		o << character.getName() << " has " << character.getActionPoints() << " AP, and wields a " << character.getWeapon()->getName() << std::endl;
 	return o;
 }

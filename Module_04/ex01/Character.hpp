@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:00 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 15:35:25 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:02:31 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include <AWeapon.hpp>
+#include "AWeapon.hpp"
+#include "Enemy.hpp"
 
 class Character
 {
@@ -23,7 +24,6 @@ class Character
 
 		std::string		_name;
 		int				_actionPoints;
-		int				_recoverAP = 10;
 		AWeapon*		_weaponPtr;
 		Character(void);
 		

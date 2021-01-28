@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:44:53 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 12:35:13 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:01:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AWeapon::AWeapon(AWeapon const &src)
 }
 
 
-AWeapon			operator=(Aweapon const &obj)
+AWeapon&		AWeapon::operator=(AWeapon const &obj)
 {
 	if(this != &obj)
 	{

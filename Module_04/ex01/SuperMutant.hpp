@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:59 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 13:18:10 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:05:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 
 class SuperMutant : public Enemy
 {
-	private:
-		
-		int 	_damageReduction = 3;
-
 	public:
 
 		SuperMutant(void);

@@ -6,22 +6,21 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/27 14:07:24 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 15:00:24 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 11:46:11 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 #include "CruelCumber.hpp"
 
-CruelCumber::CruelCumber(void) : Enemy(170, "Super Mutant")
+CruelCumber::CruelCumber(void) : Enemy(170, "CruelCumber")
 {
 	std::cout << "Mwuahahahaha CruelCumber comming for you!" << std::endl;
 	return;
 }
 
-CruelCumber::CruelCumber(CruelCumber const &src)
+CruelCumber::CruelCumber(CruelCumber const &src) : Enemy(src)
 {
-	*this = src;
 	return;
 }
 
@@ -53,11 +52,9 @@ int				CruelCumber::getHP(void) const
 
 void			CruelCumber::takeDamage(int damage)
 {
-	damage -= this->_damageReduction;
+	damage -= 6;
 	if (damage < 0)
 		return;
 	this->_hp -= damage;
-	if (this->_hp < 0)
-		this->_hp = 0;
 	return;
 }
