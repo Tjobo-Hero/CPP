@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/28 12:38:16 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:48:03 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	FragTrap::meleeAttack(std::string const &target)
 	
 void	FragTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "AMOUNT TAKE DAMAGE: " << amount << std::endl;
 	if(amount < 0)
 	{
 		std::cout << "Please enter a postive number.\n\n" << std::endl;
@@ -112,7 +111,6 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "AMOUNT BE REPAIRED: " << amount << std::endl;
 	if(amount < 0)
 	{
 		std::cout << "Please enter a postive number.\n\n" << std::endl;
@@ -127,6 +125,11 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::re_energize(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
 	this->_energyPoints += amount;
 	if (this->_energyPoints > this->_maxEnergyPoints)
 		this->_energyPoints = this->_maxEnergyPoints;

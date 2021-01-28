@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 11:07:57 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/28 12:41:29 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:48:14 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,11 @@ void	ScavTrap::beRepaired(unsigned int amount)
 
 void	ScavTrap::re_energize(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
 	this->_energyPoints += amount;
 	if (this->_energyPoints > this->_maxEnergyPoints)
 		this->_energyPoints = this->_maxEnergyPoints;

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/21 12:38:14 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/28 12:41:38 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 12:48:24 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 void	ClapTrap::re_energize(unsigned int amount)
 {
+	if(amount < 0)
+	{
+		std::cout << "Please enter a postive number.\n\n" << std::endl;
+		return;
+	}
 	this->_energyPoints += amount;
 	if (this->_energyPoints > this->_maxEnergyPoints)
 		this->_energyPoints = this->_maxEnergyPoints;
