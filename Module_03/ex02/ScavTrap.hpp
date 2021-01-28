@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 11:08:00 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:53:41 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 15:14:35 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string Name);
 	ScavTrap(ScavTrap const &src);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 
 	ScavTrap&			operator=(ScavTrap const &other);
 	void				rangedAttack(std::string const &target);

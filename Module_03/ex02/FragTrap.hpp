@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/18 16:08:16 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:24:04 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 15:14:27 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	FragTrap(void);
 	FragTrap(std::string Name);
 	FragTrap(FragTrap const &src);
-	~FragTrap(void);
+	virtual ~FragTrap(void);
 
 	FragTrap&			operator=(FragTrap const &other);
 	void				rangedAttack(std::string const &target);

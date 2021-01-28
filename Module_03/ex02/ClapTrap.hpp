@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/21 12:30:22 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/21 14:50:46 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/01/28 15:14:41 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 	ClapTrap(void);
 	ClapTrap(std::string Name);
 	ClapTrap(ClapTrap const &src);
-	~ClapTrap(void);
+	virtual ~ClapTrap(void);
 
 	ClapTrap&			operator=(ClapTrap const &other);
 	void				takeDamage(unsigned int amount);
