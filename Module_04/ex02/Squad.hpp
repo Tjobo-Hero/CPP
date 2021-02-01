@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:54 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/28 13:44:47 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/01 15:04:24 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 # define SQUAD_HPP
 
 #include "ISquad.hpp"
+#include "ISpaceMarine.hpp"
 
 class Squad : public ISquad
 {
 	private:
 	
-		int		_count;
+	typedef struct			s_list
+	{
+		ISpaceMarine		*_marine;
+		struct s_list		*_next;
+	}						t_list;
+	t_list			*_head;
+	int				_index;
 		
 	public:
 
@@ -27,9 +34,9 @@ class Squad : public ISquad
 		Squad(Squad const &src);
 		virtual ~Squad(void);
 		Squad&					operator=(Squad const &obj);
-		virtual int 			getCount(void) const;
-		virtual ISpaceMarine*	getUnit(int index) const;
-		virtual int				push(ISpaceMarine *obj);
+		int 			getCount(void) const;
+		ISpaceMarine*	getUnit(int n) const;
+		int				push(ISpaceMarine* marinePtr);
 };
 
 #endif
