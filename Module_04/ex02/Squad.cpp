@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 16:02:42 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/01 16:21:01 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ void			Squad::deleteListFunction(void)
 
 	if(_head)
 	{
+		std::cout << "TEST" << std::endl;
 		while(_head->_next)
 		{
+			std::cout << "MEER TEST" << std::endl;
 			tmp = _head;
 			delete _head->_marine;
 			_head = tmp->_next;
@@ -102,6 +104,7 @@ int				Squad::push(ISpaceMarine* marinePtr)
 	if(marinePtr == NULL)
 	{
 		std::cout << "Please enter a valid Space Marine this one is equal to NULL" << std::endl;
+		delete new_node;
 		return (this->_index);
 	}
 	if(this->_head == NULL)
@@ -116,6 +119,7 @@ int				Squad::push(ISpaceMarine* marinePtr)
 		if(marinePtr == tmp->_marine || marinePtr == tmp->_next->_marine)
 		{
 			std::cout << "This unit already exists in the squad." << std::endl;
+			delete new_node;
 			return this->_index;
 		}
 	}
