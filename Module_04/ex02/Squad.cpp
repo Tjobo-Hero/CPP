@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 15:36:34 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/01 16:02:42 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,43 @@ Squad::Squad(Squad const &src)
 
 Squad::~Squad(void)
 {
+	deleteListFunction();
 	return;
 }
 
+void			Squad::deleteListFunction(void)
+{
+	t_list *tmp;
+
+	if(_head)
+	{
+		while(_head->_next)
+		{
+			tmp = _head;
+			delete _head->_marine;
+			_head = tmp->_next;
+			delete tmp;
+		}
+		delete _head->_marine;
+		delete _head;
+	}
+}
+void			Squad::copyFunction(Squad const &obj)
+{
+	deleteListFunction();
+	for(int i = 0; i < obj.getCount(); i++)
+		push(obj.getUnit(i));
+	return;
+}
+
+
 Squad&			Squad::operator=(Squad const &obj)
 {
-	if(this != &obj)	
-		std::cout << "Nothing to do here." << std::endl;
+	if(this != &obj)
+	{
+		this->_index = obj._index;
+		this->copyFunction(obj);
+	}	
 	return *this;
 }
 

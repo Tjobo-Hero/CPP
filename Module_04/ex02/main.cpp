@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:50 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 15:36:52 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/01 16:02:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,16 @@ int			main(void)
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
-	
+	std::cout << "\nCOPYING SQUAD1 INTO SQUAD 2" << std::endl;
 	s2 = s1;
 	
+	for(int i = 0; i < s2->getCount(); i++)
+	{
+		ISpaceMarine* cur = s2->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
 	delete s1;
 	delete s2;
 

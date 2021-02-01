@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:54 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 15:04:24 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/01 15:59:40 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ class Squad : public ISquad
 		Squad(void);
 		Squad(Squad const &src);
 		virtual ~Squad(void);
-		Squad&					operator=(Squad const &obj);
+		void			copyFunction(Squad const &obj);
+		void			deleteListFunction(void);
+		Squad&			operator=(Squad const &obj);
 		int 			getCount(void) const;
 		ISpaceMarine*	getUnit(int n) const;
 		int				push(ISpaceMarine* marinePtr);
