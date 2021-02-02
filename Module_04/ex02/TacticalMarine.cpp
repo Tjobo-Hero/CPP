@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:57 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 15:14:06 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/02 13:24:42 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ TacticalMarine&		TacticalMarine::operator=(TacticalMarine const &obj)
 
 TacticalMarine*		TacticalMarine::clone(void) const
 {
-	std::cout << "cloning Assault Terminator..." << std::endl;
-	TacticalMarine *marine = new TacticalMarine(*this);
-	return marine;
+	std::cout << "cloning Tactical Marine..." << std::endl;
+	return new TacticalMarine;
 }
 
 void				TacticalMarine::battleCry(void) const

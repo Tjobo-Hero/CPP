@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/01 16:21:01 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/02 13:21:28 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,24 @@ void			Squad::deleteListFunction(void)
 
 	if(_head)
 	{
-		std::cout << "TEST" << std::endl;
-		while(_head->_next)
+		for(;this->_head; this->_head = tmp)
 		{
-			std::cout << "MEER TEST" << std::endl;
-			tmp = _head;
-			delete _head->_marine;
-			_head = tmp->_next;
-			delete tmp;
+			tmp = this->_head->_next;
+			delete this->_head->_marine;
+			delete this->_head;
 		}
-		delete _head->_marine;
-		delete _head;
 	}
 }
-void			Squad::copyFunction(Squad const &obj)
-{
-	deleteListFunction();
-	for(int i = 0; i < obj.getCount(); i++)
-		push(obj.getUnit(i));
-	return;
-}
-
 
 Squad&			Squad::operator=(Squad const &obj)
 {
 	if(this != &obj)
-	{
-		this->_index = obj._index;
-		this->copyFunction(obj);
+	{	
+		this->_index = 0;
+		deleteListFunction();
+		t_list *tmp = obj._head;
+		for(; tmp; tmp = tmp->_next)
+			this->push(tmp->_marine->clone());
 	}	
 	return *this;
 }
@@ -78,55 +68,50 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	t_list *tmp;
 
 	
-	if(n < 0 && n > this->_index)
+	if(n < 0 || n >= this->_index)
 	{
 		std::cout << "Please enter a valid unit number." << std::endl;
 		return NULL;
 	}
-	else
+	tmp = this->_head;
+	while(n)
 	{
-		tmp = this->_head;
-		for(; n; n--)
-		{
-			tmp = tmp->_next;
-		}
-		return tmp->_marine;
+		tmp = tmp->_next;
+		n--;
 	}
-	return NULL;
+	return tmp->_marine;
 }
 
 int				Squad::push(ISpaceMarine* marinePtr)
 {
-	t_list *new_node = new t_list;
-	new_node->_marine = marinePtr;
-	new_node->_next = NULL; 
 	
 	if(marinePtr == NULL)
 	{
 		std::cout << "Please enter a valid Space Marine this one is equal to NULL" << std::endl;
-		delete new_node;
 		return (this->_index);
 	}
-	if(this->_head == NULL)
-	{
-		this->_head = new_node;
-		this->_index++;
-		return this->_index;
-	}
 	t_list *tmp = this->_head;
-	for(; tmp->_next != NULL; tmp = tmp->_next)
+	if(this->_head != NULL)
 	{
-		if(marinePtr == tmp->_marine || marinePtr == tmp->_next->_marine)
+		while(tmp->_next)
 		{
-			std::cout << "This unit already exists in the squad." << std::endl;
-			delete new_node;
-			return this->_index;
+			if(marinePtr == tmp->_marine || marinePtr == tmp->_next->_marine)
+			{
+				std::cout << "This unit already exists in the squad." << std::endl;
+				return this->_index;
+			}
+			tmp = tmp->_next;
 		}
+		tmp->_next = new t_list;
+		tmp->_next->_marine = marinePtr;
+		tmp->_next->_next = NULL;
 	}
-	if(tmp == NULL)
-		tmp = new_node;
 	else
-		tmp->_next = new_node;
+	{
+		this->_head = new t_list;
+		this->_head->_marine = marinePtr;
+		this->_head->_next = NULL;
+	}
 	this->_index++;
 	return this->_index;
 }
