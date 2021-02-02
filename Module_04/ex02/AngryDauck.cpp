@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AngryDuck.hpp                                      :+:    :+:            */
+/*   AngryDauck.cpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/02 13:25:23 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/02 13:27:15 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/02 15:30:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 AngryDuck::AngryDuck(void)
 {
-	std::cout << "Angry Duck ready for battle!" << std::endl;
+	std::cout << "Angry Duck ready to quack!" << std::endl;
 	return;
 }
 
