@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 13:49:59 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/27 12:33:54 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 09:36:35 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Prey::~Prey(void)
 Prey&		Prey::operator=(Prey const &obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	if(this != obj)
+	if(this != &obj)
 		this->_name = obj._name;
 	return *this;
 }
