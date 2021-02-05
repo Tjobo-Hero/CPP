@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/02 15:34:21 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/04 15:59:14 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 14:52:26 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			main(void)
 	me->printInventory();
 	delete tmp;
 	
-	ICharacter *bob = new Character("bob");
+	Character *bob = new Character("bob");
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
@@ -87,13 +87,14 @@ int			main(void)
 	Character *me3 = new Character(*me2);
 	me3->printInventory();
 
-	me3 = me;
+	*me3 = *me;
 	me3->printInventory();
 
 	std::cout << "\n>>>Destructor<<<\n" << std::endl;
 	delete bob;
 	delete me;
 	delete me2;
+	delete me3;
 	delete src;
 	std::cout << "\n\n";
 	system("leaks a.out | grep bytes");

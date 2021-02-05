@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/02 15:33:58 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/04 15:57:22 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 14:49:05 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ Character&			Character::operator=(Character const &obj)
 	{
 		for(int i = 0; i < this->_count; i++)
 			delete this->_inventory[i];
-		this->_name = obj._name;
+		this->_name = obj.getName();
 		this->_count = obj._count;
-		for(int i = 0; i < obj._count; i++)
-			this->_inventory[i] = obj._inventory[i];
+		for(this->_count = 0; this->_count != obj._count ; this->_count++)
+			this->_inventory[this->_count] = obj._inventory[this->_count]->clone();
 	}
 	return *this;
 }
