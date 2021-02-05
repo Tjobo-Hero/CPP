@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:41 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/02 12:52:28 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 12:20:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ AssaultTerminator&		AssaultTerminator::operator=(AssaultTerminator const &obj)
 AssaultTerminator*		AssaultTerminator::clone(void) const
 {
 	std::cout << "cloning Assault Terminator..." << std::endl;
-	return new AssaultTerminator;
+	return new AssaultTerminator(*this);
 }
 
 void				AssaultTerminator::battleCry(void) const

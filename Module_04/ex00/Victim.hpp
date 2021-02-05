@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:13 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 12:46:15 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 10:47:42 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Victim
 		Victim&				operator=(Victim const &obj);
 		std::string			getName(void) const;
 		void				introduce(void) const;
-		void				getPolymorphed(void) const;
+		virtual void		getPolymorphed(void) const;
 };
 
 std::ostream&		operator<<(std::ostream &o, Victim const &victim);

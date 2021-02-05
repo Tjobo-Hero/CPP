@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 14:45:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/05 09:51:46 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 11:00:32 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int			main(void)
 	delete PR;
 	delete PF;
 	delete NC;
+	delete RS;
 
 	std::cout << "\n\n[Leaks check, see below]\n" << std::endl;
 	system("leaks a.out");

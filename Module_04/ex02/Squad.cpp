@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/28 12:12:52 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/02 13:21:28 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 14:33:27 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,26 @@ Squad::Squad(void) : _head(NULL), _index(0)
 	return;
 }
 
-Squad::Squad(Squad const &src)
+Squad::Squad(Squad const &src) : _head(NULL), _index(0)
 {
+	std::cout << "Squad copy constructer called" << std::endl;
+	*this = src;
+	return;
+}
+
+Squad::Squad(ISquad const &src) : _head(NULL), _index(0)
+{
+	std::cout << "ISquad copy constructor called" << std::endl;
 	*this = src;
 	return;
 }
 
 Squad::~Squad(void)
 {
-	deleteListFunction();
-	return;
-}
-
-void			Squad::deleteListFunction(void)
-{
-	t_list *tmp;
-
-	if(_head)
+	if(this->_index)
 	{
+		t_list *tmp = NULL;
+		
 		for(;this->_head; this->_head = tmp)
 		{
 			tmp = this->_head->_next;
@@ -43,14 +45,40 @@ void			Squad::deleteListFunction(void)
 			delete this->_head;
 		}
 	}
+	std::cout << "Squad destructed in destructor" << std::endl;
+	return;
+}
+
+Squad&			Squad::operator=(ISquad const &obj)
+{
+	if(this != &obj)
+	{
+		const ISquad* tmp2 = &obj;
+		Squad *tmp1 = dynamic_cast<Squad*>(const_cast<ISquad*>(tmp2));
+
+		Squad::operator=(*tmp1);
+	}
+	return *this;
 }
 
 Squad&			Squad::operator=(Squad const &obj)
 {
+	std::cout << "Assignation operator Squad called" << std::endl;
 	if(this != &obj)
-	{	
+	{
+		if(this->_index)
+		{
+			t_list *tmp = NULL;
+			
+			for(;this->_head; this->_head = tmp)
+			{
+				tmp = this->_head->_next;
+				delete this->_head->_marine;
+				delete this->_head;
+			}
+		}
+		std::cout << "Squad destructed" << std::endl;
 		this->_index = 0;
-		deleteListFunction();
 		t_list *tmp = obj._head;
 		for(; tmp; tmp = tmp->_next)
 			this->push(tmp->_marine->clone());
@@ -65,7 +93,6 @@ int				Squad::getCount(void) const
 
 ISpaceMarine*	Squad::getUnit(int n) const
 {
-	t_list *tmp;
 
 	
 	if(n < 0 || n >= this->_index)
@@ -73,13 +100,16 @@ ISpaceMarine*	Squad::getUnit(int n) const
 		std::cout << "Please enter a valid unit number." << std::endl;
 		return NULL;
 	}
-	tmp = this->_head;
-	while(n)
+	else if(!this->_index)
+		std::cout << "Sqaud has no members yet" << std::endl;
+	else
 	{
-		tmp = tmp->_next;
-		n--;
+		t_list *tmp = this->_head;
+		for(int i = 0; i < n; i++)
+			tmp = tmp->_next;
+		return tmp->_marine;
 	}
-	return tmp->_marine;
+	return NULL;
 }
 
 int				Squad::push(ISpaceMarine* marinePtr)

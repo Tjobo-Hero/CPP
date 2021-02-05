@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:07:03 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 14:23:22 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 12:02:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ class Peon : public Victim
 		Peon(std::string const &Name);
 		Peon(Peon const &src);
 		virtual ~Peon(void);
-		Peon&						operator=(Peon const &obj);
-		virtual void				getPolymorphed(void) const;
+		Peon&				operator=(Peon const &obj);
+		void				getPolymorphed(void) const;
 };
+
+std::ostream&		operator<<(std::ostream& o, Peon const &Peon);
 
 #endif

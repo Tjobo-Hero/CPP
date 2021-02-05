@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 13:49:37 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/01/26 14:23:20 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 12:04:07 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ class Prey : public Victim
 		Prey(std::string const &Name);
 		Prey(Prey const &src);
 		virtual ~Prey(void);
-		Prey&						operator=(Prey const &obj);
-		virtual void				getPolymorphed(void) const;
+		Prey&				operator=(Prey const &obj);
+		void				getPolymorphed(void) const;
 };
+
+std::ostream&		operator<<(std::ostream& o, Prey const &Prey);
 
 #endif
