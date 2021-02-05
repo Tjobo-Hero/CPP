@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/02 15:34:21 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/05 14:52:26 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/05 14:59:43 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,12 @@ int			main(void)
 	tmp = src->createMateria("ice");
 	me2->equip(tmp);
 	me2->printInventory();
-
+	
+	std::cout << "\n----COPY CONSTRUCTOR---\n" << std::endl;
 	Character *me3 = new Character(*me2);
 	me3->printInventory();
 
+	std::cout <<"\n\n-----ASSIGNATION----\n\n" << std::endl;
 	*me3 = *me;
 	me3->printInventory();
 
