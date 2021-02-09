@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:45:20 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 12:34:58 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/09 14:33:56 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,26 @@ int			main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << "\n----Copy constructor Bureaucrat----" << std::endl;
+	{
+		Bureaucrat tim("tim", 120);
+		Bureaucrat tim2(tim);
+
+		std::cout << tim;
+		std::cout << tim2;
+		
+	}
+	std::cout << "\n----Assignation----" << std::endl;
+	{
+		Bureaucrat hank("Hank", 120);
+		Bureaucrat bob("Bob", 1);
+
+		std::cout << hank;
+		std::cout << bob;
+
+		hank = bob;
+		std::cout << hank;
+	}
+	
 	return(0);
 }
