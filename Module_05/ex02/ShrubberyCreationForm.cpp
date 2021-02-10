@@ -6,19 +6,18 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 15:53:21 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 17:19:25 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/10 13:33:49 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "Shubbery Creation Form was created with target: [" << this->_target << "]." << std::endl;
 	return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) : Form("ShrubberyCreationForm", 145, 137), _target(src._target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) : AForm("ShrubberyCreationForm", 145, 137), _target(src._target)
 {
 	*this = src;
 	return;
@@ -26,6 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
+	std::cout << "Shrubbery Creation Form destructed." << std::endl;
 	return;
 }
 
@@ -33,18 +33,23 @@ ShrubberyCreationForm&		ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 {
 	if (this != &obj)
 	{
-		Form::operator=(obj);
+		AForm::operator=(obj);
 		this->_target = obj._target;
 	}
 	return *this;
 }
 
+std::string	const&			ShrubberyCreationForm::getTarget(void) const
+{
+	return this->_target;
+}
+
 void						ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 {
 	if (bureaucrat.getGrade() > this->getExecuteGrade())
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowToExecute();
 	else if (this->getSigned() == false)
-		throw Form::FormNotSigned();
+		throw AForm::FormNotSigned();
 	else
 	{
 		std::ofstream file;
@@ -55,27 +60,31 @@ void						ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 			std::cout << "Opening [" << filename << "] = FAILURE.\nPlease check the file name and try again." << std::endl;
 			exit(EXIT_FAILURE);
 		}
-		file <<	"     	   ****\n";
-        file << "        ********\n";
-        file << "        **  ******\n";
-        file << "         *   ******     ******\n";
-        file << "             ******   *********\n";
-        file << "              ****  *****   ***\n";
-        file << "              ***  ***     **\n";
-        file << "       *************       *\n";
-        file << "      ******************\n";
-        file << "     *****   H*****H*******\n";
-        file << "     ***     H-___-H  *********\n";
-        file << "      ***    H     H      *******\n";
-        file <<	"       **    H-___-H        *****\n";
-        file <<	"        *    H     H         ****\n";
-        file <<	"             H     H         ***\n";
-        file << "             H-___-H         **\n";
-        file <<	"             H     H         *\n";
-        file << "             H-___-H\n\n";
+		file 	<< "											\n\n"
+				<<	"     	   ****								\n"
+        		<<	"        ********							\n"
+        		<<	"        **  ******							\n"
+        		<<	"         *   ******     ******				\n"
+        		<<	"             ******   *********			\n"
+        		<<	"              ****  *****   ***			\n"
+        		<<	"              ***  ***     **				\n"
+        		<<	"       *************       *				\n"
+        		<<	"      ******************					\n"
+        		<<	"     *****   H*****H*******				\n"
+        		<<	"     ***     H-___-H  *********			\n"
+        		<<	"      ***    H     H      *******			\n"
+        		<<	"       **    H-___-H        *****			\n"
+        		<<	"        *    H     H         ****			\n"
+        		<<	"             H     H         ***			\n"
+        		<<	"             H-___-H         **			\n"
+        		<<	"             H     H         *				\n"
+        		<<	"             H-___-H						\n\n"
+				<<	"             ALOHA!!						\n"
+				<<	" Shubbery tvan-cit loves them coco-nuts!	\n";
 
-		file << "             ALOHA!!\n";
-		file <<	" Shubbery tvan-cit loves them coco-nuts!\n";
+		std::cout << bureaucrat.getName() << " executed the form: " << this->getName() << ". Succesfully.";
+		std::cout << " A text file has been made please see: "; 
+		std::cout << this->_target << "_shrubbery file in this directory." << std::endl;
 	}
 	return;
 }

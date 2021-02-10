@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Form.hpp                                           :+:    :+:            */
+/*   AForm.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 12:42:02 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 17:16:46 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/10 13:34:32 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include <string>
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 
@@ -28,14 +28,14 @@ class Form
 		const int			_signGrade;
 		const int			_execGrade;
 
-		Form(void);
+		AForm(void);
 		
 	public:
-		Form(std::string name, int signGrade, int execGrade);
-		Form(Form const &src);
-		virtual ~Form(void);
+		AForm(std::string name, int signGrade, int execGrade);
+		AForm(AForm const &src);
+		virtual ~AForm(void);
 		
-		Form&			operator=(Form const &obj);
+		AForm&			operator=(AForm const &obj);
 		std::string const&		getName(void) const;
 		int						getSignGrade(void) const;
 		int						getExecuteGrade(void) const;
@@ -52,12 +52,16 @@ class Form
 	{
 		virtual const char*	what() const throw();
 	};
+	class GradeTooLowToExecute : public std::exception
+	{
+		virtual const char*	what() const throw();
+	};
 	class FormNotSigned : public std::exception
 	{
 		virtual const char*	what() const throw();
 	};	
 };
 
-std::ostream&		operator<<(std::ostream &o, Form const &form);
+std::ostream&		operator<<(std::ostream &o, AForm const &form);
 
 #endif

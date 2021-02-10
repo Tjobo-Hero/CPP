@@ -6,21 +6,21 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 15:53:24 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 16:59:41 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/10 13:23:56 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHUBBERYCREATIONFORM_HPP
 # define SHUBBERYCREATIONFORM_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include <fstream>
 #include <cstdlib>
 #include <string>
 #include <iostream>
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	private:
 
@@ -35,6 +35,7 @@ class ShrubberyCreationForm : public Form
 
 		ShrubberyCreationForm&		operator=(ShrubberyCreationForm const &obj);
 		void						execute(Bureaucrat const &bureaucrat) const;
+		std::string	const&			getTarget(void) const;
 };
 
 #endif
