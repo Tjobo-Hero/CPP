@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 15:53:21 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/10 13:33:49 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/10 13:45:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string	const&			ShrubberyCreationForm::getTarget(void) const
 void						ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 {
 	if (bureaucrat.getGrade() > this->getExecuteGrade())
-		throw AForm::GradeTooLowToExecute();
+		throw AForm::GradeTooLowTooExecute();
 	else if (this->getSigned() == false)
 		throw AForm::FormNotSigned();
 	else

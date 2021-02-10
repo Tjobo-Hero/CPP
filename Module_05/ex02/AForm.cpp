@@ -94,7 +94,7 @@ const char*				AForm::FormNotSigned::what() const throw()
 	return "This Form is not yet signed, please sign it first. Than you'll be able to execute";
 }
 
-const char*				AForm::GradeTooLowToExecute::what() const throw()
+const char*				AForm::GradeTooLowTooExecute::what() const throw()
 {
 	return "Grade Too Low To Execute Exception is thrown because, well you guessed it, the grade is too LOW to execute";
 }

@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 12:42:02 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/10 13:34:32 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/10 13:44:39 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class AForm
 	{
 		virtual const char*	what() const throw();
 	};
-	class GradeTooLowToExecute : public std::exception
+	class GradeTooLowTooExecute : public std::exception
 	{
 		virtual const char*	what() const throw();
 	};
