@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:45:16 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/15 14:38:38 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 14:55:57 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name('[' + name + ']')
 	std::cout << "Bureaucrat created: " << this->_name << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src.getName()), _grade(src.getGrade())
 {
 	std::cout << "Copy Constructor Bureaucrat called" << std::endl;
 	*this = src;
