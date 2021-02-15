@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:45:16 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 12:35:29 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 14:38:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ Bureaucrat&				Bureaucrat::operator=(Bureaucrat const &obj)
 {
 	std::cout << "Assignation member function called" << std::endl;
 	if (this != &obj)
-	{
-		this->_name = obj._name;
 		this->_grade = obj._grade;
-	}
 	return *this;
 }
 

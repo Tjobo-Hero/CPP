@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 16:48:57 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/10 15:32:21 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 11:02:06 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			main(void)
 	AForm	*shrubberyForm;
 	AForm	*wrongNameForm;
 	
-	std::cout << "\n---Create Forms with intern---\n" << std::endl;
+	std::cout << "\nCreate Forms with intern\n" << std::endl;
 	
 	robotForm = someRandomIntern.makeForm("[RobotomyRequestForm]", "Robot Form Works");
 	presidentForm = someRandomIntern.makeForm("[PresidentialPardonForm]", "President Form Works");

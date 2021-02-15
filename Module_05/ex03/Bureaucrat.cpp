@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:45:16 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/10 13:34:50 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 14:39:01 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ Bureaucrat&				Bureaucrat::operator=(Bureaucrat const &obj)
 {
 	std::cout << "Assignation member function called" << std::endl;
 	if (this != &obj)
-	{
-		this->_name = obj._name;
 		this->_grade = obj._grade;
-	}
 	return *this;
 }
 
@@ -78,7 +75,7 @@ void				Bureaucrat::decrementGrade(void)
 void				Bureaucrat::signForm(AForm const &form) const
 {
 	if (this->getGrade() <= form.getSignGrade())
-		std::cout << this->getName() << " succesfully signed form: " << form.getName() << std::endl;
+		std::cout << "Bureucrat: " << this->_name << "(Grade: " << this->getGrade() << ") has signed the following form: " << form.getName() << "(s.grade: " << form.getSignGrade() << ", ex.grade: " << form.getExecuteGrade() << ")" << std::endl;
 	else
 	{
 		std::cout << this->getName() <<" could not sign the form " << form.getName();
@@ -93,7 +90,7 @@ void				Bureaucrat::executeForm(AForm const &form)
 	try
 	{
 		form.execute(*this);
-		std::cout << this->_name << " has executed the following form: " << form.getName() << std::endl;
+		std::cout << "Bureucrat: " << this->_name << "(Grade: " << this->getGrade() << ") has executed the following form: " << form.getName() << "(s.grade: " << form.getSignGrade() << ", ex.grade: " << form.getExecuteGrade() << ")" << std::endl;
 	}
 	catch (std::exception &e)
 	{

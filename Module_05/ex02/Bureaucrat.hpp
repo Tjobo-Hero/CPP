@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:44:47 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/10 12:14:43 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 14:38:53 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Bureaucrat
 {
 	private:
 
-		std::string 	_name;
-		int				_grade;
+		const std::string 	_name;
+		int					_grade;
 		Bureaucrat(void);
 
 	public:

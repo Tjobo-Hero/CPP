@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 12:42:04 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/09 14:17:54 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/15 14:40:49 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ Form::Form(Form const &src) : _name(src.getName()), _signed(src.getSigned()), _s
 
 Form&		Form::operator=(Form const &obj)
 {
-	this->_signed = obj._signed;
+	if (this != &obj)
+		this->_signed = obj._signed;
 	return *this;
 }
 
