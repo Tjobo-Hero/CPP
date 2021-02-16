@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/09 12:42:04 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/15 14:40:49 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/16 16:42:16 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ const char*				Form::GradeTooHighException::what() const throw()
 
 const char*				Form::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low High Exception is thrown because, well you guessed it, the grade is too LOW";
+	return "Grade Too Low Exception is thrown because, well you guessed it, the grade is too LOW";
 }
 
 std::ostream&			operator<<(std::ostream &o, Form const &form)

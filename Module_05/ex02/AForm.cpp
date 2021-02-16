@@ -86,7 +86,7 @@ const char*				AForm::GradeTooHighException::what() const throw()
 
 const char*				AForm::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low High Exception is thrown because, well you guessed it, the grade is too LOW";
+	return "Grade Too Low Exception is thrown because, well you guessed it, the grade is too LOW";
 }
 
 const char*				AForm::FormNotSigned::what() const throw()

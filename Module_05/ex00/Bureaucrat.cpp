@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/08 11:45:16 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/15 14:55:35 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/16 16:41:54 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ const char*				Bureaucrat::GradeTooHighException::what() const throw()
 
 const char*				Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade Too Low High Exception is thrown because, well you guessed it, the grade is too LOW";
+	return "Grade Too Low Exception is thrown because, well you guessed it, the grade is too LOW";
 }
 
 std::ostream&			operator<<(std::ostream &o, Bureaucrat const &bureaucrat)
