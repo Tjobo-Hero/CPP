@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/16 15:12:05 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/19 15:21:24 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/19 15:53:38 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,7 +225,8 @@ std::ostream&			operator<<(std::ostream &o, Convert const &convert)
 	o << "Is negative: " << convert.getIsNegative() << std::endl;
 	o << "Dot: " << convert.getDot() << std::endl;
 	o << "Precision: " << convert.getPrecision() << std::endl;
-	o << "Char Check: " << convert.getCharCheck() << std::endl; 
-	o << "Int Check: " << convert.getIntCheck() << "\n" << std::endl;
+	o << "Char Check: " << std::boolalpha << convert.getCharCheck() << std::endl;
+	o << "Int Check: " << std::boolalpha << convert.getIntCheck() << std::endl;
+	std::cout << "\n";
 	return o;
 }
