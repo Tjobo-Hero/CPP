@@ -6,7 +6,7 @@
 #    By: timvancitters <timvancitters@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/16 13:26:31 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/02/19 13:37:52 by timvancitte   ########   odam.nl          #
+#    Updated: 2021/02/19 15:32:54 by timvancitte   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all: $(NAME)
 
 $(NAME):
 	@echo $(YL)Compiling: $(SRCS)$(NO)
-	@$(CMPL) $(FLAGS) -o $(NAME) $(SRCS)
+	$(CMPL) $(FLAGS) -o $(NAME) $(SRCS)
 	@echo $(GR)Compiled $(NAME) Succesfully$(NO)
 	
 clean:

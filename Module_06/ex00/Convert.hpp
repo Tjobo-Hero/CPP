@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/16 13:34:33 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/19 15:28:14 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/19 15:32:33 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Convert
 		Convert(std::string literal);
 		Convert(Convert const &src);
 		~Convert(void);
-		 Convert&					operator=(Convert const &obj);
+		Convert&					operator=(Convert const &obj);
 		
 		void						setIsNegative(int n);
 		int							getIsNegative(void) const;
@@ -46,9 +46,6 @@ class Convert
 
 		void						setPrecision(int n);
 		int							getPrecision(void) const;
-
-		void						setAfterDot(int n);
-		int							getAfterDot(void) const;
 
 		bool						getCharCheck(void) const;
 		bool						getIntCheck(void) const;
