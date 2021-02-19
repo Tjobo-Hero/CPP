@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/16 13:34:33 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/17 17:08:27 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/19 15:28:14 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ class Convert
 		std::string _literal;
 		int			_is_negative;
 		int			_dot;
-		int			_afterDot;
 		int			_precision;
-		// char		_char;
-		// float		_float;
-		// double		_double;
-		// int			_negative;
-		// int			_num_fixed;
+		bool		_char_check;
+		bool		_int_check;
 		Convert(void);
 
 	public:
@@ -53,6 +49,11 @@ class Convert
 
 		void						setAfterDot(int n);
 		int							getAfterDot(void) const;
+
+		bool						getCharCheck(void) const;
+		bool						getIntCheck(void) const;
+
+		void						checkIntMinMax(double nb);
 		
 		void						checkPseudoLiteral(void) const;
 		
@@ -72,5 +73,7 @@ class Convert
 		void						convertDouble(void);
 		void						printDouble(double db) const;
 };
+
+std::ostream&		operator<<(std::ostream &o, Convert const &convert);
 
 #endif

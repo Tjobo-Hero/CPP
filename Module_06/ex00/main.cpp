@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/16 13:30:33 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/19 12:33:45 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/19 15:26:45 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		check_type(Convert &all, std::string literal)
 			all.setDot(1);
 		}
 	}
-	std::cout << "Pre: " << all.getPrecision() << std::endl;
 	if (all.getDot() == 0)
 			return (6);
 	if (literal[i] == 'f' && isdigit(literal[i - 1]))
