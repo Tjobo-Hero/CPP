@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:31:00 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/24 13:29:18 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/24 15:32:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,18 @@
 #include <string>
 
 template< typename T >
-void	iter(T* address, int length, void func(T A))
+void	print(T obj)
 {
-	address 
+	std::cout << obj;
+	return;
+}
+
+template< typename T >
+void	iter(T* arraddr, const size_t length, void func(T obj))
+{
+	for (size_t i = 0; i < length; i++)
+		func(arraddr[i]);
+	std::cout << std::endl;
 	return;
 }
 

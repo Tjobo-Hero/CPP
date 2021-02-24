@@ -6,43 +6,39 @@
 #    By: timvancitters <timvancitters@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:31:04 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/02/24 10:31:24 by timvancitte   ########   odam.nl          #
+#    Updated: 2021/02/24 15:42:21 by timvancitte   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-RD = "\x1b[31;01m"
-GR = "\x1b[32;01m"
-YL = "\x1b[33;01m"
-BL = "\x1b[34;01m"
-NO = "\x1b[0m"
+RD 		= "\x1b[31;01m"
+GR		 = "\x1b[32;01m"
+YL 		= "\x1b[33;01m"
+BL 		= "\x1b[34;01m"
+GREY 	= "\x1b[38;5;8m"
+NO 		= "\x1b[0m"
 
-NAME = iter
+NAME 	= iter
 
-SRCS = main.cpp
+SRCS 	= main.cpp
 
-FLAGS = -Wall -Wextra -Werror -std=c++03 -pedantic
+FLAGS 	= -Wall -Wextra -Werror -std=c++03 -pedantic
 
-CMPL = clang++
+CMPL 	= clang++
 
 all: $(NAME)
 
 $(NAME):
-	@echo $(YL)----------------------------------------------------
-	@echo $(YL)Compiling: 
+	@echo $(GREY)Compiling...				$(GREY)$<
 	$(CMPL) $(FLAGS) -o $(NAME) $(SRCS)
-	@echo $(YL)----------------------------------------------------
-	@echo $(GR)Compiled $(NAME) Succesfully$(NO)
-	@echo $(GR)----------------------------------------------------
-	@echo "\n";
-	@echo $(GR)----------------------------------------------------
-	@echo Executable			./iter
-	@echo $(GR)----------------------------------------------------$(NO)
+	@echo $(GREY)Compiled $(NAME) Succesfully$(NO)
+	@echo $(GR)---------------------------------------------------------------------------------
+	@echo $(GR)"Executable                     	      			  ./iter"$(NO)
 	
 clean:
-	@echo $(RD)----------------------------------------------------
+	@echo $(RD)---------------------------------------------------------------------------------
 	@rm -f $(NAME)
 	@echo $(RD)Removed Executables: $(NAME)$(NO)
-	@echo $(RD)----------------------------------------------------$(NO)
+	@echo $(RD)---------------------------------------------------------------------------------$(NO)
 	
 fclean: clean
 
