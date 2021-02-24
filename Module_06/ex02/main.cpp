@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/22 13:17:49 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/22 15:15:55 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/24 13:56:55 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ Base*	generate(void)
 	std::cout << "Generation Function called result: ";
 	if (randomIndex == 1)
 	{
-		std::cout << "[Generated an intstance of A class]" << std::endl;
+		std::cout << "[Generated an intstance of [A] class]" << std::endl;
 		return new A;
 	}
 	else if (randomIndex == 2)
 	{
-		std::cout << "[Generated instance of B class]" << std::endl;
+		std::cout << "[Generated instance of [B] class]" << std::endl;
 		return new B;
 	}
 	else
 	{
-		std::cout << "[Generated instance of C class]" << std::endl;
+		std::cout << "[Generated instance of [C] class]" << std::endl;
 		return new C;
 	}
 	return NULL;
@@ -54,25 +54,19 @@ Base*	generate(void)
 // "B" or "C" according to the real type of p.
 void	identify_from_pointer(Base *p)
 {
-	A *Atmp;
-	B *Btmp;
-	C *Ctmp;
 
 	std::cout << "Identify from pointer function called result: ";
-	Atmp = dynamic_cast<A*>(p);
-	if (Atmp)
+	if (dynamic_cast<A*>(p))
 	{
 		std::cout << "[A]" << std::endl;
 		return;
 	}
-	Btmp = dynamic_cast<B*>(p);
-	if (Btmp)
+	if (dynamic_cast<B*>(p))
 	{
 		std::cout << "[B]" << std::endl;
 		return;
 	}
-	Ctmp = dynamic_cast<C*>(p);
-	if (Ctmp)
+	if (dynamic_cast<C*>(p))
 	{
 		std::cout << "[C]" << std::endl;
 		return;
@@ -84,6 +78,9 @@ void	identify_from_pointer(Base *p)
 // // "B" or "C" according to the real type of p.
 void	identify_from_reference(Base &p)
 {
+	// Base *tmp = &p;
+	
+	// identify_from_pointer(tmp);
 	std::cout << "Identify from reference function called result: ";
 	try
 	{
