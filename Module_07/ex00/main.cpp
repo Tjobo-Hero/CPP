@@ -6,14 +6,14 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/23 15:16:46 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/23 15:46:52 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/24 10:19:07 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 #include <iostream>
 
-int		main(void)
+void	own_test(void)
 {
 	int 	a = 4;
 	int 	b = 2;
@@ -50,10 +50,31 @@ int		main(void)
 	std::cout << "Char:  Swap " << e << " and " << f << " result is : ";
 	swap(e, f);
 	std::cout << e << " and " << f << std::endl;
-	// std::cout << "Float: max of " << c << " and " << d << " is :";
-	// std::cout << max(c, d) << std::endl;
-	// std::cout << "Char:  max of " << e << " and " << f << " is :";
-	// std::cout << max(e, f) << std::endl;
-	
+
+	std::cout << "-----Two different types-----\n" << std::endl;
+	// std::cout << min(a,c) << std::endl;
+	// std::cout << min<float>(a,c) << std::endl;
+	return;
+}
+
+int		main(void)
+{
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+
+	std::cout << "\n*****Mandatory Main*****" << std::endl; 
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	std::cout << "\n\n*****Own Test function*****" << std::endl;
+	own_test();
 	return (0);
 }
