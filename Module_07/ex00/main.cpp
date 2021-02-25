@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/23 15:16:46 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/24 10:53:27 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/25 16:16:26 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int		main(void)
 
 	std::cout << "\n\n*****Own Test function*****" << std::endl;
 	own_test();
+	
 	return (0);
 }

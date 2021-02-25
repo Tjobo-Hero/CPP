@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:31:01 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/24 15:32:29 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/25 16:19:01 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		main(void)
 	iter(char_array, 4, print);
 	std::cout << "Str array: ";
 	iter(str, 5, print);
+	
 	return (0);
 }

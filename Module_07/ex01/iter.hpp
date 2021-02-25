@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:31:00 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/24 15:32:55 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/25 16:19:06 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template< typename T >
 void	print(T obj)
 {
-	std::cout << obj;
+	std::cout << obj << std::endl;
 	return;
 }
 

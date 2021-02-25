@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 14:04:51 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/25 14:06:45 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/25 16:16:34 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 #include <string>
 
 template< typename T >								
-T	const&	max(T const &first, T const &second)	
+T const &		max(T const &first, T const &second)	
 {
 	return ((first > second) ? first : second);
 }
 
 template< typename T >
-T const&	min(T const &first, T const &second)
+T const &		min(T  const &first, T const &second)
 {
 	return ((first < second ) ? first : second);
 }
 
 template< typename T >
-void	swap(T &x, T &y)
+void	swap(T &first, T &second)
 {
-	T tmp = y;
+	T tmp = first;
 
-	y = x;
-	x = tmp;
+	first = second;
+	second = tmp;
 	return;	
 }
 
