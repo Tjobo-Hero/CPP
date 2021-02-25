@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 15:50:25 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/25 13:47:55 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/25 16:48:01 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int		main(void)
 	std::cout << "\n-----Exception with an index out of limits-----" << std::endl;
 	try
 	{
-		test[-1] = 'a';
-		// test2[4] = 's';
+		// test[-1] = 'a';
+		test2[4] = 's';
 	}	
 	catch(std::exception &e)
 	{
