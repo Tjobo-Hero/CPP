@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: timvancitters <timvancitters@student.co      +#+                      #
 #                                                    +#+                       #
-#    Created: 2021/02/23 15:17:38 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/02/25 14:02:40 by timvancitte   ########   odam.nl          #
+#    Created: 2021/02/24 15:50:28 by timvancitte   #+#    #+#                  #
+#    Updated: 2021/02/25 14:00:17 by timvancitte   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BL 		= "\x1b[34;01m"
 GREY 	= "\x1b[38;5;8m"
 NO 		= "\x1b[0m"
 
-NAME 	= whatever
+NAME 	= array
 
 SRCS 	= main.cpp
 
@@ -34,7 +34,7 @@ $(NAME):
 	$(CMPL) $(FLAGS) -o $(NAME) $(SRCS)
 	@echo $(GREY)Compiled $(NAME) Succesfully$(NO)
 	@echo $(GR)---------------------------------------------------------------------------------
-	@echo $(GR)"Executable                     	      			  ./whatever"$(NO)
+	@echo $(GR)"Executable                     	      			  ./array"$(NO)
 	
 clean:
 	@echo $(YL)---------------------------------------------------------------------------------$(NO)

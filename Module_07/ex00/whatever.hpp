@@ -5,11 +5,10 @@
 /*                                                     +:+                    */
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/02/23 15:17:22 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/24 11:23:32 by timvancitte   ########   odam.nl         */
+/*   Created: 2021/02/25 14:04:51 by timvancitte   #+#    #+#                 */
+/*   Updated: 2021/02/25 14:06:45 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef TEMPLATE_HPP
 # define TEMPLATE_HPP
@@ -17,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-template< typename T >									// Template definition
+template< typename T >								
 T	const&	max(T const &first, T const &second)	
 {
 	return ((first > second) ? first : second);
@@ -40,4 +39,3 @@ void	swap(T &x, T &y)
 }
 
 #endif
-
