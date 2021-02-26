@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:09:30 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/26 10:45:17 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/26 10:55:31 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		main(void)
 {
 	std::list<int>			lst1;
 	std::vector<int>		vec1;
-
+	
 	// setRand();
 	for (int i = 0; i < 7; i++)
 	{
