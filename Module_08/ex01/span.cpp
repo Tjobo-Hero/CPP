@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:02:26 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/26 12:34:49 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/02/27 19:32:13 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,25 @@ void			Span::printArray(void) const
 
 int				Span::shortestSpan(void)
 {
-	int i = 6;
-	return i;
+	int result = -1;
+	
+	if (this->_array.size() < 2)
+		throw NoOrNotEnoughSpan();
+	return result;
 }
 
 int				Span::longestSpan(void)
 {
-	int i = 3;
-	return i;
+	int result = -1;
+	
+	if (this->_array.size() < 2)
+		throw NoOrNotEnoughSpan();
+	return result;
 }
 
 const char*		Span::ClassIsFullException::what() const throw()
 {
-	return "Class is Full exception is thrown, well because the array is full";
+	return "Class is Full exception is thrown, well because the array is full.";
 }
 
 const char*		Span::NoOrNotEnoughSpan::what() const throw()

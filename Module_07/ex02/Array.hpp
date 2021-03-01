@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 15:50:22 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/25 13:33:31 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/01 14:16:09 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ class Array
 					this->_array[i] = obj._array[i];	
 			}
 			return *this;
+		}
+
+		T&				operator[](const unsigned int index)
+		{
+			if (index >= this->_n || index < 0)
+				throw ElementOutOfLimitsException();
+			else
+				return this->_array[index];
 		}
 
 		T&				operator[](const unsigned int index)
