@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:02:29 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/26 12:32:01 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/02 10:59:11 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -46,7 +47,11 @@ class Span
 		virtual const char*	what() const throw();
 	};
 
-	class NoOrNotEnoughSpan : public std::exception
+	class NoOrNotEnoughSpanException : public std::exception
+	{
+		virtual const char*	what() const throw();
+	};
+	class ResultFailedException : public std::exception
 	{
 		virtual const char*	what() const throw();
 	};

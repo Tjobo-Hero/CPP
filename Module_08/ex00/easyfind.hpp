@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:08:51 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/25 17:26:57 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/02 13:21:12 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,22 @@ class notFoundException : public std::exception
 	}
 };
 
+template<class T>
+void	print(T& input)
+{
+	int i = 0;
+	typename T::iterator it = input.begin();
+	typename T::iterator ite = input.end();
+	for (; it != ite; it++)
+		std::cout << "i: [" << i++ << "] = "<<  *it << std::endl;
+};
+
 template< typename T>
 typename T::iterator		easyfind(T &element, int n)
 {
 	typename T::iterator	it;
 
+	std::cout << "Looking for: [" << n << "]" << std::endl;
 	it = std::find(element.begin(), element.end(), n);
 	if (it != element.end())
 		std::cout << "Element has been found: " << *it << std::endl;
@@ -36,6 +47,5 @@ typename T::iterator		easyfind(T &element, int n)
 		throw notFoundException();
 	return (it);	
 }
-
 
 #endif

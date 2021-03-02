@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:02:26 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/02/27 19:32:13 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/02 11:53:40 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span(unsigned int number) : _maxSize(number), _currentSize(0)
 
 Span::~Span(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 	return;
 } 
 
@@ -49,6 +49,9 @@ unsigned int	Span::getMaxSize(void) const
 	return this->_maxSize;
 }
 
+//Fucntion that stores a single number that will be used to fill it.
+// Attempting to add a new number if there are already N of them stored 
+// in the object is an error and should result in an exception.
 void			Span::addNumber(int n)
 {
 	if (this->_currentSize == this->_maxSize)
@@ -57,7 +60,6 @@ void			Span::addNumber(int n)
 	{
 		this->_array.push_back(n);
 		this->_currentSize += 1;
-		std::cout << "Added n: " << n << std::endl;
 	}
 	return;
 }
@@ -68,21 +70,43 @@ void			Span::printArray(void) const
 		std::cout << "i: [" << i << "] = " << this->_array[i] << std::endl;
 }
 
+//Function that finds out respcetivley the shortest span between all numbers
+//contained in the object and return it. If there’s no numbers stored, or only one,
+// there is no span to find, and you will throw an exception.
 int				Span::shortestSpan(void)
 {
-	int result = -1;
+	double result = -1;
 	
 	if (this->_array.size() < 2)
-		throw NoOrNotEnoughSpan();
+		throw NoOrNotEnoughSpanException();
+	else
+	{
+		std::vector<int>::const_iterator	it = this->_array.begin() + 1;
+		std::vector<int>::const_iterator	ite = this->_array.end();
+
+		std::sort(this->_array.begin(), this->_array.end());
+		for (; it != ite; it++ )
+			if (result == -1 || *it - *(it - 1) < result)
+				result = *it - *(it - 1);
+	}
 	return result;
 }
 
+//Function that finds out respcetivley the longest span between all numbers
+//contained in the object and return it. If there’s no numbers stored, or only one,
+// there is no span to find, and you will throw an exception.
 int				Span::longestSpan(void)
 {
-	int result = -1;
+	double result = -1;
 	
 	if (this->_array.size() < 2)
-		throw NoOrNotEnoughSpan();
+		throw NoOrNotEnoughSpanException();
+	else
+	{
+		result = (*max_element(this->_array.begin(), this->_array.end()) - (*min_element(this->_array.begin(), this->_array.end())));
+		if (!result)
+			throw ResultFailedException();
+	}
 	return result;
 }
 
@@ -91,9 +115,14 @@ const char*		Span::ClassIsFullException::what() const throw()
 	return "Class is Full exception is thrown, well because the array is full.";
 }
 
-const char*		Span::NoOrNotEnoughSpan::what() const throw()
+const char*		Span::NoOrNotEnoughSpanException::what() const throw()
 {
-	return "No or not Enough exception is thrown, well because either they array is empty or there's only one element";
+	return "No or not Enough Exception is thrown, well because either they array is empty or there's only one element";
+}
+
+const char*		Span::ResultFailedException::what() const throw()
+{
+	return "Something went wrong with calculating the result of shortest span or longest span";
 }
 
 std::ostream&		operator<<(std::ostream &o, Span const &obj)
