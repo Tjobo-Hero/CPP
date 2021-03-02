@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/25 17:02:23 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/02 13:23:33 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/02 13:27:48 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ void	setRand(void)
 	}
 	return;
 }
-
-// int		randomInt(void)
-// {
-// 	int 	randomInt = rand() % 10000000 + 1;
-
-// 	return randomInt;
-	
-// }
 
 int		main(void)
 {
