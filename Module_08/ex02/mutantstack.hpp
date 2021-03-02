@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 13:31:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/02 14:59:34 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/02 17:32:32 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ class MutantStack : public std::stack<T>
 		typedef typename 		std::stack<T>::container_type::const_iterator 			const_iterator;
 		typedef typename 		std::stack<T>::container_type::reverse_iterator 		reverse_iterator;
 		typedef typename 		std::stack<T>::container_type::const_reverse_iterator 	const_reverse_iterator;
-		iterator				begin(void) { return this->begin()};
-		iterator				end(void);
-		const_iterator			begin(void);
-		const_iterator			end(void);
-		reverse_iterator		begin(void);
-		reverse_iterator		end(void);
-		const_reverse_iterator	begin(void);
-		const_reverse_iterator	end(void);
+		iterator				begin(void) { return this->c.begin()}
+		iterator				end(void) { return this->c.end() }
+		const_iterator			begin(void) const { return this->c.begin(); }
+		const_iterator			end(void)const {return this->c.end(); }
+		reverse_iterator		res_begin(void) {return this->c.rend(); }
+		reverse_iterator		res_end(void) {return return this->c.rend(); }
+		const_reverse_iterator	res_begin(void) const { return this->c.rend(); }
+		const_reverse_iterator	res_end(void) const { return this->c.rend(); }
 };
 
 #endif
