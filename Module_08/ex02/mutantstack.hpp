@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 13:31:07 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/03 13:07:10 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/03 13:29:46 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <stack>
 #include <deque>
+#include <list>
 
 template< typename T>
 class MutantStack : public std::stack<T>
