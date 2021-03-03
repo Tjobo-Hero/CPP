@@ -6,7 +6,7 @@
 /*   By: timvancitters <timvancitters@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 13:31:01 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/03 13:36:31 by timvancitte   ########   odam.nl         */
+/*   Updated: 2021/03/03 13:39:35 by timvancitte   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int		main(void)
 
 	subject_main();
 	testList();
+
+	std::cout << "\n*****Start own Tests*****" << std::endl;
 	MutantStack<int> mstack;
 	MutantStack<int> mstack1;
 	MutantStack<int> mstack4;
